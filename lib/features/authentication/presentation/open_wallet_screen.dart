@@ -59,8 +59,12 @@ class _OpenWalletWidgetState extends ConsumerState<OpenWalletScreen> {
                   ? Container(
                       padding: const EdgeInsets.all(Spaces.small),
                       decoration: BoxDecoration(
-                        color: context.colors.surface.withValues(alpha: 0.5),
+                        color: Colors.white.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.4),
+                          width: 1,
+                        ),
                       ),
                       child: ReorderableListView(
                         proxyDecorator: (child, index, animation) {
@@ -78,65 +82,77 @@ class _OpenWalletWidgetState extends ConsumerState<OpenWalletScreen> {
                         },
                         children: <Widget>[
                           for (final name in wallets.keys)
-                            Material(
-                              color: Colors.transparent,
+                            Container(
                               key: Key(name),
-                              child: InkWell(
-                                onTap: () async {
-                                  if (!await _openWalletWithBiometrics(name)) {
-                                    if (context.mounted) {
-                                      showDialog<void>(
-                                        context: context,
-                                        builder: (context) {
-                                          return PasswordDialog(
-                                            onEnter: (password) {
-                                              _openWallet(name, password);
-                                            },
-                                          );
-                                        },
-                                      );
+                              margin: const EdgeInsets.only(bottom: Spaces.small),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                  color: Colors.white.withValues(alpha: 0.4),
+                                  width: 1,
+                                ),
+                              ),
+                              child: Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(10),
+                                  onTap: () async {
+                                    if (!await _openWalletWithBiometrics(name)) {
+                                      if (context.mounted) {
+                                        showDialog<void>(
+                                          context: context,
+                                          builder: (context) {
+                                            return PasswordDialog(
+                                              onEnter: (password) {
+                                                _openWallet(name, password);
+                                              },
+                                            );
+                                          },
+                                        );
+                                      }
                                     }
-                                  }
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(Spaces.small),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      wallets[name]!.isNotEmpty
-                                          ? HashiconWidget(
-                                              hash: wallets[name]!,
-                                              size: const Size(50, 50),
-                                            )
-                                          : const SizedBox(
-                                              width: 50,
-                                              height: 50,
-                                            ),
-                                      const SizedBox(width: Spaces.small),
-                                      Expanded(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              name,
-                                              style: context.headlineSmall,
-                                            ),
-                                            Text(
-                                              truncateText(wallets[name]!),
-                                              style: context.labelLarge!
-                                                  .copyWith(
-                                                    color: context
-                                                        .moreColors
-                                                        .mutedColor,
-                                                  ),
-                                            ),
-                                          ],
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(Spaces.medium),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        wallets[name]!.isNotEmpty
+                                            ? HashiconWidget(
+                                                hash: wallets[name]!,
+                                                size: const Size(50, 50),
+                                              )
+                                            : const SizedBox(
+                                                width: 50,
+                                                height: 50,
+                                              ),
+                                        const SizedBox(width: Spaces.small),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                name,
+                                                style: context.headlineSmall,
+                                              ),
+                                              Text(
+                                                truncateText(wallets[name]!),
+                                                style: context.labelLarge!
+                                                    .copyWith(
+                                                      color: context
+                                                          .moreColors
+                                                          .mutedColor,
+                                                    ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      const SizedBox(width: 30),
-                                    ],
+                                        const SizedBox(width: 30),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

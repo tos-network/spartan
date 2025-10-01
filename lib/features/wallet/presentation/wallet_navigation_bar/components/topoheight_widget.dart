@@ -22,8 +22,15 @@ class TopoHeightWidget extends ConsumerWidget {
 
     ValueNotifier<bool> isRescanningNotifier = ValueNotifier(false);
 
-    return Card(
-      elevation: 1,
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.4),
+          width: 1,
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(Spaces.medium),
         child: GridTile(

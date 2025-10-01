@@ -8,52 +8,34 @@ class Background extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        gradient: RadialGradient(
-          center: Alignment.center,
-          colors: [
-            context.moreColors.bgRadialColor1,
-            context.moreColors.bgRadialEndColor,
-          ],
-          radius: 1.5,
-        ),
+        color: theme.colorScheme.surfaceContainerHighest, // Base dark background
       ),
       child: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
-            center: Alignment.topRight,
+            center: Alignment.bottomRight,
+            radius: 1.2,
             colors: [
-              context.moreColors.bgRadialColor2,
-              context.moreColors.bgRadialEndColor,
+              const Color(0xFFe44b44).withValues(alpha: 0.25), // Red glow, subtle
+              theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.0),
             ],
-            radius: 1.5,
           ),
         ),
         child: Container(
           decoration: BoxDecoration(
             gradient: RadialGradient(
               center: Alignment.centerLeft,
+              radius: 1.4,
               colors: [
-                context.moreColors.bgRadialColor3,
-                context.moreColors.bgRadialEndColor,
+                const Color(0xFF03ca9b).withValues(alpha: 0.18), // Teal-green glow, slightly stronger and wider
+                theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.0),
               ],
-              radius: 2,
             ),
           ),
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                // https://github.com/flutter/flutter/issues/104114
-                // opacity is not working for mobile browser so we applied it directly to the png image
-                // opacity: .05,
-                repeat: ImageRepeat.repeat,
-                alignment: Alignment.topLeft,
-                image: AppResources.bgDots.image,
-              ),
-            ),
-            child: child,
-          ),
+          child: child,
         ),
       ),
     );

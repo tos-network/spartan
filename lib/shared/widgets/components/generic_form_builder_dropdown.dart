@@ -34,6 +34,15 @@ class GenericFormBuilderDropdown<T> extends StatelessWidget {
       dropdownColor:
           dropdownColor ?? context.colors.surface.withValues(alpha: 0.9),
       focusColor: Colors.transparent,
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        errorBorder: InputBorder.none,
+        disabledBorder: InputBorder.none,
+        contentPadding: EdgeInsets.zero,
+        filled: false,
+      ),
       items: items,
       selectedItemBuilder: (selectedItems != null)
           ? (context) => selectedItems!

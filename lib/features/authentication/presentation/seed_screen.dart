@@ -158,19 +158,35 @@ class _SeedScreenState extends ConsumerState<SeedScreen> {
                         ),
                       ),
                       const SizedBox(height: Spaces.extraSmall),
-                      GenericFormBuilderDropdown(
-                        name: 'language',
-                        initialValue: _mnemonicLanguage,
-                        onChanged: _onLanguageChanged,
-                        items: MnemonicLanguage.values
-                            .map(
-                              (MnemonicLanguage language) =>
-                                  DropdownMenuItem<MnemonicLanguage>(
-                                    value: language,
-                                    child: Text(language.displayName),
-                                  ),
-                            )
-                            .toList(),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.4),
+                            width: 1,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: Spaces.medium,
+                            vertical: Spaces.small,
+                          ),
+                          child: GenericFormBuilderDropdown(
+                            name: 'language',
+                            initialValue: _mnemonicLanguage,
+                            onChanged: _onLanguageChanged,
+                            items: MnemonicLanguage.values
+                                .map(
+                                  (MnemonicLanguage language) =>
+                                      DropdownMenuItem<MnemonicLanguage>(
+                                        value: language,
+                                        child: Text(language.displayName),
+                                      ),
+                                )
+                                .toList(),
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -274,16 +290,17 @@ class _SeedScreenState extends ConsumerState<SeedScreen> {
                               }
                             });
                           },
-                          child: Card(
-                            shape: RoundedRectangleBorder(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(10),
-                              side: BorderSide(
+                              border: Border.all(
                                 color: _wordIndex == word.key
                                     ? context.colors.primary
                                     : _invalidWords?.contains(word.value) ??
                                           false
                                     ? context.colors.error
-                                    : context.moreColors.mutedColor,
+                                    : Colors.white.withValues(alpha: 0.4),
                                 width: 2,
                               ),
                             ),

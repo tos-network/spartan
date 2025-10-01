@@ -102,32 +102,48 @@ class _MySeedScreenState extends ConsumerState<MySeedScreen> {
                 Row(
                   children: [
                     Expanded(
-                      child: GenericFormBuilderDropdown(
-                        name: 'languages_dropdown',
-                        initialValue: MnemonicLanguage.english,
-                        items: MnemonicLanguage.values
-                            .map(
-                              (e) => DropdownMenuItem(
-                                value: e,
-                                child: Text(e.displayName),
-                              ),
-                            )
-                            .toList(),
-                        onChanged: (MnemonicLanguage? value) {
-                          ref
-                              .read(walletStateProvider.notifier)
-                              .getSeed(value!)
-                              .then(
-                                (value) {
-                                  setState(() {
-                                    _seedWords = value;
-                                  });
-                                },
-                                onError: (_, _) => ref
-                                    .read(snackBarQueueProvider.notifier)
-                                    .showError(loc.oups),
-                              );
-                        },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.4),
+                            width: 1,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: Spaces.medium,
+                            vertical: Spaces.small,
+                          ),
+                          child: GenericFormBuilderDropdown(
+                            name: 'languages_dropdown',
+                            initialValue: MnemonicLanguage.english,
+                            items: MnemonicLanguage.values
+                                .map(
+                                  (e) => DropdownMenuItem(
+                                    value: e,
+                                    child: Text(e.displayName),
+                                  ),
+                                )
+                                .toList(),
+                            onChanged: (MnemonicLanguage? value) {
+                              ref
+                                  .read(walletStateProvider.notifier)
+                                  .getSeed(value!)
+                                  .then(
+                                    (value) {
+                                      setState(() {
+                                        _seedWords = value;
+                                      });
+                                    },
+                                    onError: (_, _) => ref
+                                        .read(snackBarQueueProvider.notifier)
+                                        .showError(loc.oups),
+                                  );
+                            },
+                          ),
+                        ),
                       ),
                     ),
                     Spacer(),
@@ -166,9 +182,14 @@ class _MySeedScreenState extends ConsumerState<MySeedScreen> {
                     shrinkWrap: true,
                     children: _seedWords.indexed
                         .map<Widget>(
-                          ((int index, String word) tuple) => Card(
-                            shape: RoundedRectangleBorder(
+                          ((int index, String word) tuple) => Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.4),
+                                width: 1,
+                              ),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(

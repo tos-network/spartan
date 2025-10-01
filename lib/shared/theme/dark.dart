@@ -6,11 +6,13 @@ import 'package:google_fonts/google_fonts.dart';
 ThemeData darkTheme() {
   const textColor = Colors.white;
   var lineHeight = 1.2;
-  // const primaryColor = Color.fromARGB(255, 216, 216, 216);
-  const primaryColor = Color.fromARGB(255, 122, 250, 211);
-  const secondaryColor = Color.fromARGB(255, 122, 203, 250);
-  const backgroundColor = Color.fromARGB(255, 19, 19, 19);
-  final borderRadius = BorderRadius.circular(10.0);
+  // Bitfinex-inspired color scheme
+  const primaryColor = Color(0xFF03ca9b); // Teal green
+  const secondaryColor = Color(0xFF82baf6); // Light blue
+  const errorColor = Color(0xFFe44b44); // Red accent
+  const backgroundColor = Color(0xFF0d1d29); // Deep blue-black (rgb(13, 29, 41))
+  const surfaceColor = Color(0xFF172d3e); // Darker surface (rgb(23, 45, 62))
+  final borderRadius = BorderRadius.circular(8.0);
 
   WidgetStateProperty<Color> switchStateProperty =
       WidgetStateProperty.resolveWith((states) {
@@ -41,23 +43,24 @@ ThemeData darkTheme() {
     colorScheme: const ColorScheme(
       brightness: Brightness.dark,
       primary: primaryColor,
-      onPrimary: Colors.black87,
+      onPrimary: backgroundColor,
       secondary: secondaryColor,
-      onSecondary: Colors.white,
-      error: Colors.red,
+      onSecondary: backgroundColor,
+      error: errorColor,
       onError: Colors.white,
-      surface: backgroundColor,
+      surface: surfaceColor,
       onSurface: textColor,
+      surfaceContainerHighest: backgroundColor,
     ),
 
     // EXTENSIONS
     extensions: <ThemeExtension<dynamic>>[
       MoreColors(
-        bgRadialColor1: const Color.fromARGB(255, 75, 75, 75),
-        bgRadialColor2: const Color.fromARGB(178, 100, 100, 100),
-        bgRadialColor3: const Color.fromARGB(153, 25, 25, 25),
-        bgRadialEndColor: const Color.fromARGB(0, 0, 0, 0),
-        mutedColor: textColor.withValues(alpha: 0.6),
+        bgRadialColor1: backgroundColor,
+        bgRadialColor2: surfaceColor,
+        bgRadialColor3: backgroundColor,
+        bgRadialEndColor: backgroundColor,
+        mutedColor: textColor.withValues(alpha: 0.5),
       ),
     ],
 
@@ -146,21 +149,25 @@ ThemeData darkTheme() {
 
     // CARD
     cardTheme: CardThemeData(
-      color: Colors.black12,
+      color: Colors.white.withValues(alpha: 0.1),
+      elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: borderRadius,
-        // side: const BorderSide(color: Colors.black12, width: 1),
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(
+          color: Colors.white.withValues(alpha: 0.4),
+          width: 1,
+        ),
       ),
     ),
 
     // BUTTON
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        backgroundColor: Colors.black12,
-        //foregroundColor: primaryColor,
+        backgroundColor: surfaceColor,
+        foregroundColor: primaryColor,
         side: const BorderSide(
-          color: Color.fromARGB(255, 122, 250, 211),
-          width: 2,
+          color: primaryColor,
+          width: 1.5,
         ),
         padding: const EdgeInsets.symmetric(
           vertical: Spaces.medium,
@@ -182,16 +189,16 @@ ThemeData darkTheme() {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         backgroundColor: primaryColor,
-        foregroundColor: Colors.black87,
-        disabledBackgroundColor: Colors.black87,
-        iconColor: Colors.black87,
+        foregroundColor: backgroundColor,
+        disabledBackgroundColor: surfaceColor,
+        iconColor: backgroundColor,
         disabledIconColor: Colors.white24,
         padding: const EdgeInsets.symmetric(
           vertical: Spaces.medium,
           horizontal: Spaces.medium,
         ),
         shape: RoundedRectangleBorder(borderRadius: borderRadius),
-        textStyle: GoogleFonts.jura(fontWeight: FontWeight.bold),
+        textStyle: GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 15),
       ),
     ),
 
@@ -202,93 +209,99 @@ ThemeData darkTheme() {
     navigationBarTheme: NavigationBarThemeData(
       indicatorShape: CircleBorder(side: BorderSide.none),
       surfaceTintColor: Colors.transparent,
-      backgroundColor: Colors.black26,
-      indicatorColor: Colors.white,
+      backgroundColor: surfaceColor,
+      indicatorColor: primaryColor.withValues(alpha: 0.2),
       labelTextStyle: WidgetStatePropertyAll(
-        GoogleFonts.jura(color: Colors.white),
+        GoogleFonts.inter(color: textColor, fontWeight: FontWeight.w500),
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       elevation: 0,
-      backgroundColor: Colors.black26,
-      selectedItemColor: Colors.white,
+      backgroundColor: surfaceColor,
+      selectedItemColor: primaryColor,
       type: BottomNavigationBarType.fixed,
-      unselectedItemColor: Colors.white54,
-      selectedLabelStyle: GoogleFonts.jura(
+      unselectedItemColor: textColor.withValues(alpha: 0.6),
+      selectedLabelStyle: GoogleFonts.inter(
         fontSize: 12,
         fontWeight: FontWeight.w600,
       ),
-      selectedIconTheme: IconThemeData(size: 36),
+      selectedIconTheme: IconThemeData(size: 36, color: primaryColor),
     ),
     navigationRailTheme: NavigationRailThemeData(
-      backgroundColor: Colors.black26,
+      backgroundColor: surfaceColor,
       indicatorColor: Colors.transparent,
-      //useIndicator: false,
-      selectedLabelTextStyle: GoogleFonts.jura(
-        color: Colors.white,
+      selectedLabelTextStyle: GoogleFonts.inter(
+        color: primaryColor,
         fontSize: 14,
         fontWeight: FontWeight.w600,
       ),
-      unselectedLabelTextStyle: GoogleFonts.jura(
-        color: Colors.white54,
+      unselectedLabelTextStyle: GoogleFonts.inter(
+        color: textColor.withValues(alpha: 0.6),
         fontSize: 12,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w500,
       ),
-      selectedIconTheme: IconThemeData(size: 36, color: Colors.white),
-      unselectedIconTheme: IconThemeData(size: 30, color: Colors.white54),
+      selectedIconTheme: IconThemeData(size: 36, color: primaryColor),
+      unselectedIconTheme: IconThemeData(size: 30, color: textColor.withValues(alpha: 0.6)),
     ),
 
     // INPUT
     inputDecorationTheme: InputDecorationTheme(
-      labelStyle: const TextStyle(color: Colors.white54),
-      errorStyle: const TextStyle(
-        color: Colors.red,
+      labelStyle: TextStyle(color: textColor.withValues(alpha: 0.7)),
+      errorStyle: TextStyle(
+        color: errorColor,
         fontSize: 14,
-        fontWeight: FontWeight.w800,
+        fontWeight: FontWeight.w600,
       ),
       contentPadding: const EdgeInsets.all(15),
       filled: true,
-      fillColor: Colors.black45,
-      iconColor: Colors.white,
-      suffixIconColor: Colors.white,
-      prefixIconColor: Colors.white,
+      fillColor: backgroundColor.withValues(alpha: 0.7),
+      iconColor: textColor,
+      suffixIconColor: textColor,
+      prefixIconColor: textColor,
       floatingLabelBehavior: FloatingLabelBehavior.never,
       enabledBorder: OutlineInputBorder(
         borderRadius: borderRadius,
-        borderSide: const BorderSide(color: Colors.transparent, width: 1),
+        borderSide: BorderSide(color: surfaceColor, width: 1),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: borderRadius,
-        borderSide: const BorderSide(color: Colors.transparent, width: 0),
+        borderSide: BorderSide(color: primaryColor, width: 1.5),
       ),
       errorMaxLines: 2,
       errorBorder: OutlineInputBorder(
         borderRadius: borderRadius,
-        borderSide: const BorderSide(color: Colors.red, width: 2),
+        borderSide: BorderSide(color: errorColor, width: 1.5),
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderRadius: borderRadius,
-        borderSide: const BorderSide(color: Colors.red, width: 2.5),
+        borderSide: BorderSide(color: errorColor, width: 2),
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: borderRadius,
-        borderSide: const BorderSide(color: Colors.transparent, width: 1),
+        borderSide: BorderSide(color: surfaceColor.withValues(alpha: 0.5), width: 1),
       ),
     ),
 
     // SNACKBAR
     snackBarTheme: SnackBarThemeData(
-      backgroundColor: backgroundColor,
-      actionTextColor: Colors.amber,
+      backgroundColor: surfaceColor,
+      contentTextStyle: TextStyle(color: textColor),
+      actionTextColor: primaryColor,
       shape: RoundedRectangleBorder(borderRadius: borderRadius),
     ),
 
     // DIALOG
     dialogTheme: DialogThemeData(
-      backgroundColor: backgroundColor /*.withValues(alpha: 0.6)*/,
+      backgroundColor: backgroundColor.withValues(alpha: 0.95),
       surfaceTintColor: Colors.transparent,
-      barrierColor: Colors.transparent,
-      shape: RoundedRectangleBorder(borderRadius: borderRadius),
+      barrierColor: Colors.black.withValues(alpha: 0.5),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+        side: BorderSide(
+          color: Colors.white.withValues(alpha: 0.15),
+          width: 1,
+        ),
+      ),
       actionsPadding: const EdgeInsets.all(Spaces.medium),
     ),
 
@@ -300,18 +313,25 @@ ThemeData darkTheme() {
     ),
 
     // TAB BAR
-    tabBarTheme: const TabBarThemeData(
-      dividerColor: Colors.white30,
+    tabBarTheme: TabBarThemeData(
+      dividerColor: surfaceColor,
+      indicatorColor: primaryColor,
+      labelColor: primaryColor,
+      unselectedLabelColor: textColor.withValues(alpha: 0.6),
       overlayColor: WidgetStatePropertyAll(Colors.transparent),
     ),
 
     // MODAL BOTTOM SHEET
     bottomSheetTheme: BottomSheetThemeData(
-      backgroundColor: backgroundColor.withValues(alpha: 0.9),
+      backgroundColor: backgroundColor.withValues(alpha: 0.95),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
+        ),
+        side: BorderSide(
+          color: Colors.white.withValues(alpha: 0.15),
+          width: 1,
         ),
       ),
     ),
@@ -319,37 +339,48 @@ ThemeData darkTheme() {
     // MISC
     tooltipTheme: TooltipThemeData(
       decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: borderRadius,
+        color: backgroundColor.withValues(alpha: 0.95),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.15), width: 1),
       ),
       textStyle: const TextStyle(color: textColor),
     ),
 
-    dividerTheme: const DividerThemeData(
-      thickness: 2,
-      color: Colors.white30,
+    dividerTheme: DividerThemeData(
+      thickness: 1,
+      color: surfaceColor,
       space: 20,
     ),
 
-    listTileTheme: const ListTileThemeData(
+    listTileTheme: ListTileThemeData(
       contentPadding: EdgeInsets.all(10),
       dense: true,
       tileColor: Colors.transparent,
-      //minVerticalPadding: 5,
+      selectedTileColor: primaryColor.withValues(alpha: 0.1),
+      selectedColor: primaryColor,
     ),
 
     sliderTheme: SliderThemeData(
-      inactiveTrackColor: Colors.white38,
+      activeTrackColor: primaryColor,
+      inactiveTrackColor: surfaceColor,
+      thumbColor: primaryColor,
       trackHeight: 2,
     ),
 
     chipTheme: ChipThemeData(
-      color: WidgetStatePropertyAll(Colors.transparent),
+      color: WidgetStatePropertyAll(Colors.white.withValues(alpha: 0.05)),
       elevation: 0,
       padding: const EdgeInsets.all(Spaces.small),
-      shape: RoundedRectangleBorder(borderRadius: borderRadius),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
       brightness: Brightness.dark,
-      side: chipBorderStateProperty,
+      side: WidgetStateBorderSide.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return BorderSide(color: primaryColor, width: 1.5);
+        }
+        return BorderSide(color: Colors.white.withValues(alpha: 0.15), width: 1);
+      }),
     ),
 
     checkboxTheme: CheckboxThemeData(
@@ -359,6 +390,6 @@ ThemeData darkTheme() {
   );
 
   return baseTheme.copyWith(
-    textTheme: GoogleFonts.juraTextTheme(baseTheme.textTheme),
+    textTheme: GoogleFonts.interTextTheme(baseTheme.textTheme),
   );
 }

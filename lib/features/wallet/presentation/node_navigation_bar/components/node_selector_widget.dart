@@ -58,7 +58,15 @@ class NodeSelectorWidgetState extends ConsumerState<NodeSelectorWidget> {
 
     var nodeAddress = networkNodes.getNodeAddress(network);
     var nodes = networkNodes.getNodes(network);
-    return Card(
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.4),
+          width: 1,
+        ),
+      ),
       child: Theme(
         data: context.theme.copyWith(
           dividerColor: Colors.transparent,

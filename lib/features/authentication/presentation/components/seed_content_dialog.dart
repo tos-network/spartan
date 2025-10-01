@@ -63,9 +63,14 @@ class _SeedContentDialogState extends ConsumerState<SeedContentDialog> {
                 shrinkWrap: true,
                 children: widget.seed.indexed
                     .map<Widget>(
-                      ((int index, String word) tuple) => Card(
-                        shape: RoundedRectangleBorder(
+                      ((int index, String word) tuple) => Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.4),
+                            width: 1,
+                          ),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.only(

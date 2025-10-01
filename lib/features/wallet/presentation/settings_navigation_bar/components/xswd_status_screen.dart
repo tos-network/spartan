@@ -49,7 +49,15 @@ class _XswdStatusScreenState extends ConsumerState<XswdStatusScreen> {
             ),
             const SizedBox(height: Spaces.large),
             // Switch to enable/disable XSWD
-            Card(
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.4),
+                  width: 1,
+                ),
+              ),
               child: FormBuilderSwitch(
                 name: 'xswd_switch',
                 initialValue: enableXswd,
@@ -112,7 +120,16 @@ class _XswdStatusScreenState extends ConsumerState<XswdStatusScreen> {
                         Text(loc.applications, style: context.titleMedium),
                         const SizedBox(height: Spaces.small),
                         ...value.map((appInfo) {
-                          return Card(
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: Spaces.small),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.4),
+                                width: 1,
+                              ),
+                            ),
                             child: Padding(
                               padding: const EdgeInsets.all(Spaces.small),
                               child: Row(
