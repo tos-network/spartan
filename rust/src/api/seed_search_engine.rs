@@ -1,7 +1,7 @@
 use anyhow::{Ok, Result};
 use flutter_rust_bridge::frb;
 use trie_rs::{Trie, TrieBuilder};
-use xelis_wallet::mnemonics::{languages::english::ENGLISH, LANGUAGES};
+use tos_wallet::mnemonics::{languages::english::ENGLISH, LANGUAGES};
 
 pub struct SearchEngine {
     trie: Trie<u8>,

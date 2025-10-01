@@ -39,7 +39,8 @@ String getTosTicker(rust.Network network) {
     case rust.Network.mainnet:
       return 'TOS';
     case rust.Network.testnet:
-    case rust.Network.dev:
+    case rust.Network.stagenet:
+    case rust.Network.devnet:
       return 'TOT';
   }
 }

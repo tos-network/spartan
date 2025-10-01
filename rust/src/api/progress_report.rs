@@ -14,7 +14,8 @@ pub struct ProgressReport {
 }
 
 pub fn add_progress_report(report: ProgressReport) {
-    if let Some(sink) = &*PROGRESS_REPORT_STREAM_SINK.read() {
+    let guard = (*PROGRESS_REPORT_STREAM_SINK).read();
+    if let Some(sink) = &*guard {
         sink.add(report)
             .expect("Error while adding Report to the stream");
     }

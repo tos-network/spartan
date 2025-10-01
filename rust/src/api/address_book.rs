@@ -4,7 +4,7 @@ use super::{
 };
 use anyhow::{bail, Result};
 use regex::RegexBuilder;
-use xelis_common::{
+use tos_common::{
     api::{
         query::{Query, QueryElement, QueryValue},
         DataElement, DataValue,

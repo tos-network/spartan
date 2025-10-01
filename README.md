@@ -29,7 +29,7 @@ Follow the steps below to install and run Sallet on your desired platform.
 ### Clone the Repository
 
 ```
-git clone https://github.com/xelis-project/sallet.git
+git clone https://github.com/tos-project/sallet.git
 ```
 
 ### Build and Run
@@ -52,11 +52,39 @@ just init
 flutter run --release
 ```
 
-4. Or, build the application for your platform (e.g. ``windows``, etc.):
+4. Or, build the application for your platform:
 
-```
-flutter build <platform>
-```
+#### Platform-Specific Build Commands
+
+- **Android** (requires Android SDK):
+  ```bash
+  flutter build apk
+  ```
+
+- **iOS** (requires macOS and Xcode):
+  ```bash
+  flutter build ios
+  ```
+
+- **macOS** (requires macOS):
+  ```bash
+  flutter build macos
+  ```
+
+- **Windows** (requires Windows):
+  ```bash
+  flutter build windows
+  ```
+
+- **Linux** (requires Linux):
+  ```bash
+  flutter build linux
+  ```
+
+- **Web**:
+  ```bash
+  flutter build web
+  ```
 
 For platform-specific instructions and additional configuration steps, please refer to the documentation available by following the links provided.
 

@@ -1,7 +1,7 @@
 use anyhow::{Context, Result};
 use flutter_rust_bridge::frb;
 use serde_json::json;
-use xelis_common::{crypto::Address, network::Network};
+use tos_common::{crypto::Address, network::Network};
 
 use super::models::wallet_dtos::IntegratedAddress;
 
@@ -11,8 +11,7 @@ pub fn is_address_valid(str_address: String, network: Network) -> bool {
     match Address::from_string(&str_address) {
         Ok(address) => match network {
             Network::Mainnet => address.is_mainnet(),
-            Network::Testnet => !address.is_mainnet(),
-            Network::Dev => !address.is_mainnet(),
+            Network::Testnet | Network::Stagenet | Network::Devnet => !address.is_mainnet(),
         },
         Err(_) => false,
     }

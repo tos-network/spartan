@@ -52,7 +52,7 @@ pub struct SendToDartLogger {
 
 impl SendToDartLogger {
     pub fn set_stream_sink(stream_sink: StreamSink<LogEntry>) {
-        let mut guard = SEND_TO_DART_LOGGER_STREAM_SINK.write();
+        let mut guard = (*SEND_TO_DART_LOGGER_STREAM_SINK).write();
         let overriding = guard.is_some();
 
         *guard = Some(stream_sink);
@@ -83,7 +83,8 @@ impl Log for SendToDartLogger {
 
     fn log(&self, record: &Record) {
         let entry = Self::record_to_entry(record);
-        if let Some(sink) = &*SEND_TO_DART_LOGGER_STREAM_SINK.read() {
+        let guard = (*SEND_TO_DART_LOGGER_STREAM_SINK).read();
+        if let Some(sink) = &*guard {
             sink.add(entry).unwrap();
         }
     }

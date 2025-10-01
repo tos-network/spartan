@@ -55,7 +55,7 @@ dependencies:
   #  flutter_animate: ^4.5.0
   #  workmanager: ^0.5.2
 
-  flutter_rust_bridge: 2.10.0
+  flutter_rust_bridge: 2.11.1
   rust_builder:
     path: rust_builder
   flutter_hashicon:

@@ -24,7 +24,8 @@ class NodeInfoWidget extends ConsumerWidget {
         SelectableText(switch (info?.network) {
           Network.mainnet => 'Mainnet',
           Network.testnet => 'Testnet',
-          Network.dev => 'Dev',
+          Network.stagenet => 'Stagenet',
+          Network.devnet => 'Devnet',
           null => '...',
         }, style: context.titleLarge),
         const SizedBox(height: Spaces.medium),

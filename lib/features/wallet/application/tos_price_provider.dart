@@ -10,7 +10,7 @@ part 'tos_price_provider.g.dart';
 
 final Uri coinPaprikaEndpoint = Uri.https(
   'api.coinpaprika.com',
-  '/v1/tickers/xel-xelis',
+  '/v1/tickers/xel-tos',
 );
 
 @riverpod

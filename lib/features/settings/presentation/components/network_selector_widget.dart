@@ -11,7 +11,7 @@ import 'package:sallet/shared/theme/extensions.dart';
 const List<Network> networks = <Network>[
   Network.mainnet,
   Network.testnet,
-  Network.dev,
+  Network.devnet,
 ];
 
 class NetworkSelectorWidget extends ConsumerWidget {

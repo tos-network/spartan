@@ -106,7 +106,7 @@ class _TransactionEntryScreenState
 
     Uri url;
     switch (network) {
-      case Network.mainnet || Network.dev:
+      case Network.mainnet || Network.stagenet || Network.devnet:
         url = Uri.parse(
           '${AppResources.explorerMainnetUrl}$hashPath${transactionEntry.hash}',
         );

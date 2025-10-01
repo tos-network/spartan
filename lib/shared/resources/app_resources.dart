@@ -21,31 +21,31 @@ class AppResources {
   static List<NodeAddress> mainnetNodes = [
     const NodeAddress(
       name: 'Seed Node US #1',
-      url: 'https://us-node.xelis.io/',
+      url: 'https://us-node.tos.io/',
     ),
     const NodeAddress(
       name: 'Seed Node France #1',
-      url: 'https://fr-node.xelis.io/',
+      url: 'https://fr-node.tos.io/',
     ),
     const NodeAddress(
       name: 'Seed Node Germany #1',
-      url: 'https://de-node.xelis.io/',
+      url: 'https://de-node.tos.io/',
     ),
     const NodeAddress(
       name: 'Seed Node Poland #1',
-      url: 'https://pl-node.xelis.io/',
+      url: 'https://pl-node.tos.io/',
     ),
     const NodeAddress(
       name: 'Seed Node Singapore #1',
-      url: 'https://sg-node.xelis.io/',
+      url: 'https://sg-node.tos.io/',
     ),
     const NodeAddress(
       name: 'Seed Node United Kingdom #1',
-      url: 'https://uk-node.xelis.io/',
+      url: 'https://uk-node.tos.io/',
     ),
     const NodeAddress(
       name: 'Seed Node Canada #1',
-      url: 'https://ca-node.xelis.io/',
+      url: 'https://ca-node.tos.io/',
     ),
   ];
 
@@ -67,15 +67,15 @@ class AppResources {
     ),
   ];
 
-  static String explorerMainnetUrl = 'https://explorer.xelis.io/';
-  static String explorerTestnetUrl = 'https://testnet-explorer.xelis.io/';
+  static String explorerMainnetUrl = 'https://explorer.tos.io/';
+  static String explorerTestnetUrl = 'https://testnet-explorer.tos.io/';
 
   /*static String svgIconGreenTarget =
-      'https://raw.githubusercontent.com/xelis-project/xelis-assets/master/icons/svg/transparent/green.svg';
+      'https://raw.githubusercontent.com/tos-project/tos-assets/master/icons/svg/transparent/green.svg';
   static String svgIconBlackTarget =
-      'https://raw.githubusercontent.com/xelis-project/xelis-assets/master/icons/svg/transparent/black.svg';
+      'https://raw.githubusercontent.com/tos-project/tos-assets/master/icons/svg/transparent/black.svg';
   static String svgIconWhiteTarget =
-      'https://raw.githubusercontent.com/xelis-project/xelis-assets/master/icons/svg/transparent/white.svg';
+      'https://raw.githubusercontent.com/tos-project/tos-assets/master/icons/svg/transparent/white.svg';
 
   static late ScalableImage svgIconGreen;
   static late ScalableImage svgIconWhite;

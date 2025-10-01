@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use flutter_rust_bridge::frb;
 use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
-use xelis_common::api::{DataConversionError, DataElement, DataValue};
+use tos_common::api::{DataConversionError, DataElement, DataValue};
 
 #[derive(Clone, Debug)]
 pub struct AddressBookData {

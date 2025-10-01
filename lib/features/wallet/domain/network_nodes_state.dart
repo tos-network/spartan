@@ -32,7 +32,8 @@ abstract class NetworkNodesState with _$NetworkNodesState {
         return mainnetNodes;
       case Network.testnet:
         return testnetNodes;
-      case Network.dev:
+      case Network.stagenet:
+      case Network.devnet:
         return devNodes;
     }
   }
@@ -43,7 +44,8 @@ abstract class NetworkNodesState with _$NetworkNodesState {
         return mainnetAddress;
       case Network.testnet:
         return testnetAddress;
-      case Network.dev:
+      case Network.stagenet:
+      case Network.devnet:
         return devAddress;
     }
   }

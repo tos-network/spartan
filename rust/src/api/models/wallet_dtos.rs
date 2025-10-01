@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
-pub use xelis_common::transaction::builder::TransactionTypeBuilder;
-pub use xelis_common::{api::DataElement, crypto::Address};
+pub use tos_common::transaction::builder::TransactionTypeBuilder;
+pub use tos_common::{api::DataElement, crypto::Address};
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct SummaryTransaction {

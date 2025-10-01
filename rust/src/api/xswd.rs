@@ -3,12 +3,12 @@ use std::collections::HashMap;
 use anyhow::{bail, Error, Result};
 pub use flutter_rust_bridge::DartFnFuture;
 use log::{debug, error, info};
-use xelis_common::tokio::spawn_task;
-pub use xelis_common::tokio::sync::mpsc::UnboundedReceiver;
-pub use xelis_common::tokio::sync::oneshot::Sender;
-pub use xelis_wallet::api::AppState;
-use xelis_wallet::api::{APIServer, Permission, PermissionResult};
-pub use xelis_wallet::wallet::XSWDEvent;
+use tos_common::tokio::spawn_task;
+pub use tos_common::tokio::sync::mpsc::UnboundedReceiver;
+pub use tos_common::tokio::sync::oneshot::Sender;
+pub use tos_wallet::api::AppState;
+use tos_wallet::api::{APIServer, Permission, PermissionResult};
+pub use tos_wallet::wallet::XSWDEvent;
 
 use super::{
     models::xswd_dtos::{
@@ -75,7 +75,7 @@ impl XSWD for TosWallet {
             + 'static,
     ) -> Result<()> {
         match self.get_wallet().enable_xswd().await {
-            Ok(receiver) => {
+            Ok(Some(receiver)) => {
                 spawn_task("xswd_handler", async move {
                     xswd_handler(
                         receiver,
@@ -87,6 +87,7 @@ impl XSWD for TosWallet {
                     .await;
                 });
             }
+            Ok(None) => {}
             Err(e) => bail!("Error while enabling XSWD Server: {}", e),
         };
         Ok(())
@@ -104,8 +105,8 @@ impl XSWD for TosWallet {
 
     async fn get_application_permissions(&self) -> Result<Vec<AppInfo>> {
         let lock = self.get_wallet().get_api_server().lock().await;
-        let api_server: &xelis_wallet::api::APIServer<
-            std::sync::Arc<xelis_wallet::wallet::Wallet>,
+        let api_server: &tos_wallet::api::APIServer<
+            std::sync::Arc<tos_wallet::wallet::Wallet>,
         > = lock
             .as_ref()
             .ok_or_else(|| anyhow::anyhow!("API Server is not running"))?;
@@ -297,7 +298,7 @@ pub async fn create_app_info(state: &AppState) -> AppInfo {
         .collect();
 
     AppInfo {
-        id: state.get_id().clone(),
+        id: state.get_id().to_string(),
         name: state.get_name().clone(),
         description: state.get_description().clone(),
         url: state.get_url().clone(),

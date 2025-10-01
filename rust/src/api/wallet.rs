@@ -9,21 +9,21 @@ use indexmap::IndexSet;
 use log::{error, info, warn};
 use parking_lot::RwLock;
 use serde_json::json;
-use xelis_common::api::{DataElement, DataValue};
-use xelis_common::config::{COIN_DECIMALS, XELIS_ASSET};
-use xelis_common::crypto::{Address, Hash, Hashable, Signature};
-use xelis_common::network::Network;
-use xelis_common::serializer::Serializer;
-use xelis_common::transaction::builder::{
+use tos_common::api::{DataElement, DataValue};
+use tos_common::config::{COIN_DECIMALS, TOS_ASSET};
+use tos_common::crypto::{Address, Hash, Hashable, Signature};
+use tos_common::network::Network;
+use tos_common::serializer::Serializer;
+use tos_common::transaction::builder::{
     FeeBuilder, MultiSigBuilder, TransactionTypeBuilder, TransferBuilder, UnsignedTransaction,
 };
-use xelis_common::transaction::multisig::{MultiSig, SignatureId};
-use xelis_common::transaction::BurnPayload;
-pub use xelis_common::transaction::Transaction;
-use xelis_common::utils::{detect_available_parallelism, format_coin, format_tos};
-use xelis_wallet::precomputed_tables;
-pub use xelis_wallet::transaction_builder::TransactionBuilderState;
-use xelis_wallet::wallet::{RecoverOption, Wallet};
+use tos_common::transaction::multisig::{MultiSig, SignatureId};
+use tos_common::transaction::BurnPayload;
+pub use tos_common::transaction::Transaction;
+use tos_common::utils::{detect_available_parallelism, format_coin, format_tos};
+use tos_wallet::precomputed_tables;
+pub use tos_wallet::transaction_builder::TransactionBuilderState;
+use tos_wallet::wallet::{RecoverOption, Wallet};
 
 use super::precomputed_tables::{LogProgressTableGenerationReportFunction, PrecomputedTableType};
 use crate::frb_generated::StreamSink;
@@ -77,7 +77,7 @@ pub async fn create_tos_wallet(
     };
 
     let n_threads = detect_available_parallelism();
-    let xelis_wallet = Wallet::create(
+    let tos_wallet = Wallet::create(
         &name,
         &password,
         recover,
@@ -89,7 +89,7 @@ pub async fn create_tos_wallet(
     .await?;
 
     Ok(TosWallet {
-        wallet: xelis_wallet,
+        wallet: tos_wallet,
         pending_transactions: RwLock::new(HashMap::new()),
         pending_unsigned: RwLock::new(None),
     })
@@ -117,7 +117,7 @@ pub async fn open_tos_wallet(
     .await?;
 
     let n_threads = detect_available_parallelism();
-    let xelis_wallet = Wallet::open(
+    let tos_wallet = Wallet::open(
         &name,
         &password,
         network,
@@ -127,7 +127,7 @@ pub async fn open_tos_wallet(
     )?;
 
     Ok(TosWallet {
-        wallet: xelis_wallet,
+        wallet: tos_wallet,
         pending_transactions: RwLock::new(HashMap::new()),
         pending_unsigned: RwLock::new(None),
     })
@@ -259,7 +259,7 @@ impl TosWallet {
     pub async fn get_tos_balance(&self) -> Result<String> {
         let storage = self.wallet.get_storage().read().await;
         let balance = storage
-            .get_plaintext_balance_for(&XELIS_ASSET)
+            .get_plaintext_balance_for(&TOS_ASSET)
             .await
             .unwrap_or(0);
         Ok(format_tos(balance))
@@ -488,7 +488,7 @@ impl TosWallet {
         info!("Building transfer all transaction...");
 
         let asset = match asset_hash {
-            None => XELIS_ASSET,
+            None => TOS_ASSET,
             Some(value) => Hash::from_hex(&value).context("Invalid asset")?,
         };
 
@@ -527,7 +527,7 @@ impl TosWallet {
             .await
             .context("Error while estimating fees")?;
 
-        if asset == XELIS_ASSET {
+        if asset == TOS_ASSET {
             amount = amount
                 .checked_sub(estimated_fees)
                 .context("Insufficient balance for fees")?;
@@ -588,7 +588,7 @@ impl TosWallet {
         info!("Building multisig transfer all transaction...");
 
         let asset = match asset_hash {
-            None => XELIS_ASSET,
+            None => TOS_ASSET,
             Some(value) => Hash::from_hex(&value).context("Invalid asset")?,
         };
 
@@ -634,7 +634,7 @@ impl TosWallet {
                     .await
                     .context("Error while estimating fees")?;
 
-                if asset == XELIS_ASSET {
+                if asset == TOS_ASSET {
                     amount = amount
                         .checked_sub(estimated_fees)
                         .context("Insufficient balance for fees")?;
@@ -828,7 +828,7 @@ impl TosWallet {
             .await
             .context("Error while estimating fees")?;
 
-        if asset == XELIS_ASSET {
+        if asset == TOS_ASSET {
             amount -= estimated_fees;
             payload.amount = amount;
         }
@@ -897,7 +897,7 @@ impl TosWallet {
                     .await
                     .context("Error while estimating fees")?;
 
-                if asset == XELIS_ASSET {
+                if asset == TOS_ASSET {
                     amount -= estimated_fees;
                     payload.amount = amount;
                 }
@@ -1103,7 +1103,7 @@ impl TosWallet {
         asset_hash: Option<String>,
     ) -> Result<String> {
         let asset = match asset_hash {
-            None => XELIS_ASSET,
+            None => TOS_ASSET,
             Some(value) => Hash::from_hex(&value).context("Invalid asset")?,
         };
 
