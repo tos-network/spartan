@@ -91,7 +91,3 @@ For platform-specific instructions and additional configuration steps, please re
 ## License
 
 Sallet is open source and licensed under the [GPL License](LICENSE). Feel free to modify and distribute the application as per the terms of the license.
-
-## Contact
-
-For any questions or inquiries, please contact the TOS team on [Discord](https://discord.gg/z543umPUdj).
