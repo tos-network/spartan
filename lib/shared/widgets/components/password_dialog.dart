@@ -139,7 +139,7 @@ class _PasswordDialogState extends ConsumerState<PasswordDialog> {
               color: context.moreColors.mutedColor,
             ),
           ),
-          const SizedBox(height: Spaces.large),
+          const SizedBox(height: Spaces.medium),
           FormBuilder(
             key: _passwordFormKey,
             child: PasswordTextField(

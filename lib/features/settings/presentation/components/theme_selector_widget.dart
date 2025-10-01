@@ -7,7 +7,6 @@ import 'package:sallet/features/settings/domain/theme_translate_name.dart';
 import 'package:sallet/shared/theme/extensions.dart';
 
 const List<AppTheme> themes = <AppTheme>[
-  AppTheme.tos,
   AppTheme.dark,
   AppTheme.light,
 ];

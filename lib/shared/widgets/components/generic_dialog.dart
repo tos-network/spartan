@@ -59,7 +59,7 @@ class GenericDialog extends StatelessWidget {
               Spaces.medium,
               Spaces.medium,
               Spaces.medium,
-              Spaces.large,
+              Spaces.medium,
             ),
             actionsPadding: const EdgeInsets.fromLTRB(
               Spaces.medium,

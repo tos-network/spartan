@@ -27,7 +27,7 @@ abstract class SettingsState with _$SettingsState {
     @Default(false)
     bool activateBiometricAuth,
     @JsonKey(name: 'network') @Default(Network.mainnet) Network network,
-    @JsonKey(name: 'theme') @Default(AppTheme.tos) AppTheme theme,
+    @JsonKey(name: 'theme') @Default(AppTheme.dark) AppTheme theme,
     @LocaleJsonConverter() required Locale locale,
   }) = _SettingsState;
 
