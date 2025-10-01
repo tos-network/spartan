@@ -1,5 +1,13 @@
 <svg width="779" height="743" viewBox="0 0 779 743" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M389.543 742.872L778.452 353.964L424.691 0.202599L479.444 132.737L700.67 353.964L389.543 665.091L78.4165 353.964L300.142 129.121L354.598 0L0.634766 353.964L389.543 742.872Z" fill="#02FFCF"/>
-<path d="M389.543 665.091L354.598 0L300.142 129.121L389.543 665.091Z" fill="#02FFCF"/>
-<path d="M424.691 0.202599L389.543 665.091L479.444 132.737L424.691 0.202599Z" fill="#02FFCF"/>
+  <!-- TOS Letter Logo - Green -->
+  <!-- T -->
+  <rect x="80" y="150" width="200" height="60" fill="#02FFCF" rx="10"/>
+  <rect x="160" y="150" width="60" height="400" fill="#02FFCF" rx="10"/>
+
+  <!-- O -->
+  <circle cx="380" cy="350" r="120" stroke="#02FFCF" stroke-width="60" fill="none"/>
+
+  <!-- S -->
+  <path d="M520 230 Q520 170, 580 170 Q640 170, 640 230 Q640 290, 580 290 Q520 290, 520 350 Q520 410, 580 410 Q640 410, 640 470 Q640 530, 580 530 Q520 530, 520 470"
+        stroke="#02FFCF" stroke-width="60" fill="none" stroke-linecap="round"/>
 </svg>

@@ -1,6 +1,16 @@
-<svg width="201" height="201" viewBox="0 0 201 201" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="100.739" cy="100.492" r="100" transform="rotate(180 100.739 100.492)" fill="black"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M100.74 178.273L178.521 100.491L107.769 29.7388L118.72 56.2456L162.965 100.491L100.74 162.716L38.5144 100.491L82.8594 55.5224L93.7507 29.6982L22.958 100.491L100.74 178.273Z" fill="#02FFCF"/>
-<path d="M100.74 162.716L93.7507 29.6982L82.8594 55.5224L100.74 162.716Z" fill="#02FFCF"/>
-<path d="M107.769 29.7388L100.74 162.716L118.72 56.2456L107.769 29.7388Z" fill="#02FFCF"/>
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black circular background -->
+  <circle cx="500" cy="500" r="500" fill="#000000"/>
+
+  <!-- TOS Logo - Green - Centered -->
+  <!-- T -->
+  <rect x="200" y="300" width="150" height="45" fill="#02FFCF" rx="8"/>
+  <rect x="256" y="300" width="45" height="300" fill="#02FFCF" rx="8"/>
+
+  <!-- O -->
+  <circle cx="448" cy="450" r="90" stroke="#02FFCF" stroke-width="45" fill="none"/>
+
+  <!-- S -->
+  <path d="M548 360 Q548 315, 593 315 Q638 315, 638 360 Q638 405, 593 405 Q548 405, 548 450 Q548 495, 593 495 Q638 495, 638 540 Q638 585, 593 585 Q548 585, 548 540"
+        stroke="#02FFCF" stroke-width="45" fill="none" stroke-linecap="round"/>
 </svg>
