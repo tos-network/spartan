@@ -8,14 +8,14 @@ This wallet harnesses the power of Rust by incorporating a native Rust library f
 
 The name "Sallet" refers to the medieval combat helmet (also called celata, salade, or schaller) that was widely used in 15th century Europe. Just as the sallet helmet provided robust protection for warriors in battle, the Sallet wallet is designed to safeguard your digital assets with the highest security standards.
 
-Our app icon features a stylized sallet helmet with:
-- **Rounded crown**: Symbolizing comprehensive protection
-- **Face visor**: Representing privacy and security
-- **Neck guard**: Illustrating defense from all angles
-- **Metallic finish**: Conveying strength and durability
-- **Teal gradient background**: Matching the TOS network brand colors
+Our app icon features a modern Spartan warrior helmet and shield design with:
+- **Split-color helmet**: Red and black halves symbolizing the duality of strength and stealth in protection
+- **Shield emblem**: Geometric shield outline representing comprehensive security
+- **Spartan T-visor**: The iconic face opening conveying vigilance and readiness
+- **Bold typography**: "SALLET" branding integrated directly into the emblem
+- **Modern geometric style**: Clean lines and sharp angles for contemporary appeal
 
-This design philosophy reflects our commitment to protecting user assets with the same reliability and strength that medieval armor provided to its wearers.
+This design philosophy reflects our commitment to protecting user assets with the warrior spirit - combining the vigilance of ancient Spartan defenders with modern security standards.
 
 ## Features
 
