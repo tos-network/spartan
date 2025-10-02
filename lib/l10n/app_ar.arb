@@ -19,7 +19,7 @@
   "import_wallet_folder": "استيراد محفظة",
   "new_wallet": "محفظة جديدة",
   "recover_wallet": "استعادة محفظتك",
-  "create_new_wallet_message": "أنشئ محفظة جديدة لبدء استخدام Sallet.",
+  "create_new_wallet_message": "أنشئ محفظة جديدة لبدء استخدام Spartan.",
   "recover_from_seed_message": "لاستعادة محفظتك، استخدم عبارة الاسترداد الخاصة بك (24 كلمة أو 25 كلمة).",
   "recover_from_private_key_message": "لاستعادة محفظتك، استخدم مفتاحك الخاص (النمط السادس عشر).",
   "private_key": "مفتاح خاص",

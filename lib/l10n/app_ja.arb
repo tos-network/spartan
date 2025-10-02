@@ -19,7 +19,7 @@
   "import_wallet_folder": "財布をインポートしてください",
   "new_wallet": "新しいウォレット",
   "recover_wallet": "지갑을 복구하세요",
-  "create_new_wallet_message": "新しいウォレットを作成してSalletを使用を開始してください",
+  "create_new_wallet_message": "新しいウォレットを作成してSpartanを使用を開始してください",
   "recover_from_seed_message": "お使いのウォレットを復元するには、リカバリーフレーズ（24語または25語）を使用してください",
   "recover_from_private_key_message": "お使いのウォレットを復元するには、プライベートキー（16進数）を使用してください",
   "private_key": "プライベートキー",

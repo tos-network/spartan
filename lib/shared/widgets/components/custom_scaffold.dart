@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 class CustomScaffold extends StatelessWidget {
   const CustomScaffold({

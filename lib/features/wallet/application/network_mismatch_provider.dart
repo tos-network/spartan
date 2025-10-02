@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/wallet/application/node_info_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/wallet/application/node_info_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart' as sdk;
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart'
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart'
     as rust;
 
 part 'network_mismatch_provider.g.dart';

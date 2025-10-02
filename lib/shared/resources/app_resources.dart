@@ -1,14 +1,14 @@
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sallet/features/wallet/domain/node_address.dart';
-import 'package:sallet/src/generated/l10n/app_localizations.dart';
+import 'package:spartan/features/wallet/domain/node_address.dart';
+import 'package:spartan/src/generated/l10n/app_localizations.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart' as sdk;
 // import 'package:jovial_svg/jovial_svg.dart';
 
 class AppResources {
-  static const String tosWalletName = 'Sallet';
+  static const String tosWalletName = 'Spartan';
 
-  static const String userWalletsFolderName = 'Sallet wallets';
+  static const String userWalletsFolderName = 'Spartan wallets';
 
   static const String zeroBalance = '0.00000000';
 

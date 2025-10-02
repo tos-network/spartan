@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sallet/src/generated/rust_bridge/api/logger.dart';
-import 'package:sallet/src/generated/rust_bridge/api/api.dart';
+import 'package:spartan/src/generated/rust_bridge/api/logger.dart';
+import 'package:spartan/src/generated/rust_bridge/api/api.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 // Talker instance to log messages

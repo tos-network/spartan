@@ -2,19 +2,19 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/history_providers.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/presentation/history_navigation_bar/history_navigation_bar.dart';
-import 'package:sallet/features/wallet/presentation/node_navigation_bar/node_navigation_bar.dart';
-import 'package:sallet/features/wallet/presentation/assets_navigation_bar/assets_navigation_bar.dart';
-import 'package:sallet/features/wallet/presentation/settings_navigation_bar/settings_navigation_bar.dart';
-import 'package:sallet/features/wallet/presentation/wallet_navigation_bar/wallet_navigation_bar.dart';
-import 'package:sallet/shared/providers/snackbar_queue_provider.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/utils/utils.dart';
-import 'package:sallet/shared/widgets/components/custom_scaffold.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/history_providers.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/presentation/history_navigation_bar/history_navigation_bar.dart';
+import 'package:spartan/features/wallet/presentation/node_navigation_bar/node_navigation_bar.dart';
+import 'package:spartan/features/wallet/presentation/assets_navigation_bar/assets_navigation_bar.dart';
+import 'package:spartan/features/wallet/presentation/settings_navigation_bar/settings_navigation_bar.dart';
+import 'package:spartan/features/wallet/presentation/wallet_navigation_bar/wallet_navigation_bar.dart';
+import 'package:spartan/shared/providers/snackbar_queue_provider.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/utils/utils.dart';
+import 'package:spartan/shared/widgets/components/custom_scaffold.dart';
 
 class WalletScreen extends ConsumerStatefulWidget {
   const WalletScreen({super.key});
@@ -201,7 +201,7 @@ class _WalletScreenState extends ConsumerState<WalletScreen> {
             .read(walletStateProvider.notifier)
             .exportCsvForWeb();
         if (content != null) {
-          saveTextFile(content, 'sallet_transactions.csv');
+          saveTextFile(content, 'spartan_transactions.csv');
           ref
               .read(snackBarQueueProvider.notifier)
               .showInfo(loc.csv_exported_successfully);

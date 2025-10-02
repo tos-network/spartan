@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sallet/features/wallet/domain/destination_address.dart';
+import 'package:spartan/features/wallet/domain/destination_address.dart';
 
 part 'transaction_review_state.freezed.dart';
 

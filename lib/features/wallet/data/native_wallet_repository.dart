@@ -1,17 +1,17 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:sallet/features/wallet/domain/multisig/multisig_state.dart';
-import 'package:sallet/features/wallet/domain/transaction_summary.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/address_book_dtos.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/wallet_dtos.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/xswd_dtos.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
-import 'package:sallet/src/generated/rust_bridge/api/precomputed_tables.dart';
+import 'package:spartan/features/wallet/domain/multisig/multisig_state.dart';
+import 'package:spartan/features/wallet/domain/transaction_summary.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/address_book_dtos.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/wallet_dtos.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/xswd_dtos.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/src/generated/rust_bridge/api/precomputed_tables.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart' as sdk;
-import 'package:sallet/features/wallet/domain/event.dart';
-import 'package:sallet/features/logger/logger.dart';
-import 'package:sallet/src/generated/rust_bridge/api/wallet.dart';
+import 'package:spartan/features/wallet/domain/event.dart';
+import 'package:spartan/features/logger/logger.dart';
+import 'package:spartan/src/generated/rust_bridge/api/wallet.dart';
 
 class NativeWalletRepository {
   NativeWalletRepository._internal(this._tosWallet);

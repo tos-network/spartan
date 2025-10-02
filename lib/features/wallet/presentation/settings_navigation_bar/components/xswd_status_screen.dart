@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/application/xswd_providers.dart';
-import 'package:sallet/features/wallet/presentation/settings_navigation_bar/components/xswd_edit_permission_dialog.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/widgets/components/custom_scaffold.dart';
-import 'package:sallet/shared/widgets/components/generic_app_bar_widget.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/xswd_dtos.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/application/xswd_providers.dart';
+import 'package:spartan/features/wallet/presentation/settings_navigation_bar/components/xswd_edit_permission_dialog.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/widgets/components/custom_scaffold.dart';
+import 'package:spartan/shared/widgets/components/generic_app_bar_widget.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/xswd_dtos.dart';
 
 class XswdStatusScreen extends ConsumerStatefulWidget {
   const XswdStatusScreen({super.key});

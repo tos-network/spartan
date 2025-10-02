@@ -19,7 +19,7 @@
   "import_wallet_folder": "Importa un portafoglio",
   "new_wallet": "Nuovo portafoglio",
   "recover_wallet": "Ripristina il tuo portafoglio",
-  "create_new_wallet_message": "Crea un nuovo portafoglio per iniziare ad utilizzare Sallet",
+  "create_new_wallet_message": "Crea un nuovo portafoglio per iniziare ad utilizzare Spartan",
   "recover_from_seed_message": "Ripristina il tuo portafoglio dalla tua frase di recupero (24 o 25 parole)",
   "recover_from_private_key_message": "Ripristina il tuo portafoglio dalla tua chiave privata (formato esadecimale)",
   "private_key": "Chiave privata",

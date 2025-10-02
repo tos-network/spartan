@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/logger/logger.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/history_providers.dart';
-import 'package:sallet/features/wallet/application/search_query_provider.dart';
-import 'package:sallet/features/wallet/presentation/history_navigation_bar/components/filter_dialog.dart';
-import 'package:sallet/features/wallet/presentation/history_navigation_bar/components/transaction_entry_widget.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/theme/constants.dart';
+import 'package:spartan/features/logger/logger.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/history_providers.dart';
+import 'package:spartan/features/wallet/application/search_query_provider.dart';
+import 'package:spartan/features/wallet/presentation/history_navigation_bar/components/filter_dialog.dart';
+import 'package:spartan/features/wallet/presentation/history_navigation_bar/components/transaction_entry_widget.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/constants.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SecureStorageRepository {
-  final String _namespace = 'sallet_secure_storage';
+  final String _namespace = 'spartan_secure_storage';
   late FlutterSecureStorage storage;
 
   SecureStorageRepository() {
@@ -17,7 +17,7 @@ class SecureStorageRepository {
   AndroidOptions _getAndroidOptions() => AndroidOptions(
     encryptedSharedPreferences: true,
     sharedPreferencesName: _namespace,
-    preferencesKeyPrefix: 'sallet',
+    preferencesKeyPrefix: 'spartan',
   );
 
   MacOsOptions _getMacOsOptions() => MacOsOptions(accountName: _namespace);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 mixin TransactionBuilderMixin {
   Widget buildLabeledText(BuildContext context, String label, String value) {

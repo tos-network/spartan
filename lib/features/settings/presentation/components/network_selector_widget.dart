@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
-import 'package:sallet/features/authentication/application/authentication_service.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/settings/domain/network_translate_name.dart';
-import 'package:sallet/shared/providers/snackbar_queue_provider.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/features/authentication/application/authentication_service.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/settings/domain/network_translate_name.dart';
+import 'package:spartan/shared/providers/snackbar_queue_provider.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 const List<Network> networks = <Network>[
   Network.mainnet,

@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/presentation/assets_navigation_bar/components/tracked_asset_item.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/presentation/assets_navigation_bar/components/tracked_asset_item.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 class TrackedBalancesTab extends ConsumerWidget {
   const TrackedBalancesTab({super.key});

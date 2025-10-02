@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/xswd_providers.dart';
-import 'package:sallet/features/wallet/domain/xswd_request_state.dart';
-import 'package:sallet/features/wallet/presentation/xswd/xswd_dialog.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/xswd_providers.dart';
+import 'package:spartan/features/wallet/domain/xswd_request_state.dart';
+import 'package:spartan/features/wallet/presentation/xswd/xswd_dialog.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 class XswdWidget extends ConsumerStatefulWidget {
   const XswdWidget(this.child, {super.key});

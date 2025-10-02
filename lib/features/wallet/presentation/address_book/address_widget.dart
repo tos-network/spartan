@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/address_book_provider.dart';
-import 'package:sallet/features/wallet/presentation/address_book/add_contact_dialog.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/widgets/components/hashicon_widget.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/address_book_provider.dart';
+import 'package:spartan/features/wallet/presentation/address_book/add_contact_dialog.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/widgets/components/hashicon_widget.dart';
 
 class AddressWidget extends ConsumerStatefulWidget {
   const AddressWidget(this.address, {super.key});

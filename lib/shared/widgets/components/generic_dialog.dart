@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import 'package:sallet/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/constants.dart';
 
 class GenericDialog extends StatelessWidget {
   const GenericDialog({

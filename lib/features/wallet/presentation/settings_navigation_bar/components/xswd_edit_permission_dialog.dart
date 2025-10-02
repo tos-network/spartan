@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/application/xswd_providers.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/utils/utils.dart';
-import 'package:sallet/shared/widgets/components/generic_dialog.dart';
-import 'package:sallet/shared/widgets/components/generic_form_builder_dropdown.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/xswd_dtos.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/application/xswd_providers.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/utils/utils.dart';
+import 'package:spartan/shared/widgets/components/generic_dialog.dart';
+import 'package:spartan/shared/widgets/components/generic_form_builder_dropdown.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/xswd_dtos.dart';
 import 'package:go_router/go_router.dart';
 
 class XswdEditPermissionDialog extends ConsumerStatefulWidget {

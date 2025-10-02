@@ -5,10 +5,10 @@ import 'package:path/path.dart' as p;
 import 'dart:convert';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
-import 'package:sallet/features/authentication/application/authentication_service.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/shared/utils/utils.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/features/authentication/application/authentication_service.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/shared/utils/utils.dart';
 
 part 'wallets_state_provider.g.dart';
 

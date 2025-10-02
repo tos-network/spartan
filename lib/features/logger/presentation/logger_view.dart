@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/logger/logger.dart';
-import 'package:sallet/features/logger/presentation/logger_actions_bottom_sheet.dart';
-import 'package:sallet/features/logger/presentation/logger_view_app_bar.dart';
-import 'package:sallet/features/logger/presentation/logger_view_controller.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/shared/providers/snackbar_queue_provider.dart';
-import 'package:sallet/shared/theme/constants.dart';
+import 'package:spartan/features/logger/logger.dart';
+import 'package:spartan/features/logger/presentation/logger_actions_bottom_sheet.dart';
+import 'package:spartan/features/logger/presentation/logger_view_app_bar.dart';
+import 'package:spartan/features/logger/presentation/logger_view_controller.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/shared/providers/snackbar_queue_provider.dart';
+import 'package:spartan/shared/theme/constants.dart';
 import 'package:group_button/group_button.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 

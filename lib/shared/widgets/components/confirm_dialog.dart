@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/shared/widgets/components/generic_dialog.dart';
+import 'package:spartan/shared/widgets/components/generic_dialog.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 class ConfirmDialog extends ConsumerStatefulWidget {
   final String? title;

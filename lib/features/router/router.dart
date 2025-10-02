@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/authentication/application/authentication_service.dart';
-import 'package:sallet/features/router/route_utils.dart';
-import 'package:sallet/features/logger/logger.dart';
+import 'package:spartan/features/authentication/application/authentication_service.dart';
+import 'package:spartan/features/router/route_utils.dart';
+import 'package:spartan/features/logger/logger.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sallet/features/router/routes.dart';
+import 'package:spartan/features/router/routes.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 part 'router.g.dart';

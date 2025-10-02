@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/more_colors.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/more_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ThemeData darkTheme() {

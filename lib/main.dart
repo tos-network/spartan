@@ -2,21 +2,21 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/shared/storage/shared_preferences/sallet_shared_preferences.dart';
-import 'package:sallet/src/generated/rust_bridge/frb_generated.dart';
+import 'package:spartan/shared/storage/shared_preferences/spartan_shared_preferences.dart';
+import 'package:spartan/src/generated/rust_bridge/frb_generated.dart';
 import 'package:intl/intl.dart';
 import 'package:talker_riverpod_logger/talker_riverpod_logger.dart';
 import 'package:window_manager/window_manager.dart';
-import 'package:sallet/features/logger/logger.dart';
-import 'package:sallet/shared/resources/app_resources.dart';
-import 'package:sallet/shared/storage/shared_preferences/shared_preferences_provider.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/widgets/sallet_app.dart';
+import 'package:spartan/features/logger/logger.dart';
+import 'package:spartan/shared/resources/app_resources.dart';
+import 'package:spartan/shared/storage/shared_preferences/shared_preferences_provider.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/widgets/spartan_app.dart';
 import 'package:localstorage/localstorage.dart';
 // import 'package:jovial_svg/jovial_svg.dart';
 
 Future<void> main() async {
-  talker.info('Starting Sallet...');
+  talker.info('Starting Spartan...');
   talker.info('initializing Flutter bindings ...');
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
@@ -68,7 +68,7 @@ Future<void> main() async {
   final locale = WidgetsBinding.instance.platformDispatcher.locale;
   Intl.defaultLocale = locale.toLanguageTag();
 
-  final prefs = await SalletSharedPreferences.setUp();
+  final prefs = await SpartanSharedPreferences.setUp();
 
   talker.info('initialisation done!');
   FlutterNativeSplash.remove();
@@ -85,7 +85,7 @@ Future<void> main() async {
           ),
         ),
       ],
-      child: const Sallet(),
+      child: const Spartan(),
     ),
   );
 }

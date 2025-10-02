@@ -19,7 +19,7 @@
   "import_wallet_folder": "वॉलेट आयात करें",
   "new_wallet": "नया वॉलेट",
   "recover_wallet": "अपने वॉलेट को पुनर्प्राप्त करें",
-  "create_new_wallet_message": "नया वॉलेट बनाएं ताकि आप Sallet का उपयोग शुरू कर सकें",
+  "create_new_wallet_message": "नया वॉलेट बनाएं ताकि आप Spartan का उपयोग शुरू कर सकें",
   "recover_from_seed_message": "अपनी वॉलेट को अपने रिकवरी फ्रेज़ (24 या 25 शब्दों) से पुनर्प्राप्त करें",
   "recover_from_private_key_message": "अपनी वॉलेट को अपने प्राइवेट की (हेक्साडेसिमल फॉर्मेट) से पुनर्प्राप्त करें",
   "private_key": "निजी कुंजी",

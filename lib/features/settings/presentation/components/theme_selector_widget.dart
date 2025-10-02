@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/settings/domain/settings_state.dart';
-import 'package:sallet/features/settings/domain/theme_translate_name.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/settings/domain/settings_state.dart';
+import 'package:spartan/features/settings/domain/theme_translate_name.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 const List<AppTheme> themes = <AppTheme>[
   AppTheme.dark,

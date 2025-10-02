@@ -1,5 +1,5 @@
-import 'package:sallet/features/wallet/domain/mnemonic_languages.dart';
-import 'package:sallet/src/generated/rust_bridge/api/seed_search_engine.dart';
+import 'package:spartan/features/wallet/domain/mnemonic_languages.dart';
+import 'package:spartan/src/generated/rust_bridge/api/seed_search_engine.dart';
 
 class SeedSearchEngineRepository {
   SeedSearchEngineRepository._internal(this._searchEngine);

@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sallet/features/wallet/domain/permission_rpc_request.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/xswd_dtos.dart';
+import 'package:spartan/features/wallet/domain/permission_rpc_request.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/xswd_dtos.dart';
 
 part 'xswd_request_state.freezed.dart';
 

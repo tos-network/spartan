@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sallet/features/logger/presentation/logger_view.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/widgets/components/custom_scaffold.dart';
+import 'package:spartan/features/logger/presentation/logger_view.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/widgets/components/custom_scaffold.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class LoggerScreen extends StatelessWidget {

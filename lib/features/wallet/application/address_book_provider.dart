@@ -1,6 +1,6 @@
-import 'package:sallet/features/wallet/application/search_query_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/address_book_dtos.dart';
+import 'package:spartan/features/wallet/application/search_query_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/address_book_dtos.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'address_book_provider.g.dart';

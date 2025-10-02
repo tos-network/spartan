@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/utils/utils.dart';
-import 'package:sallet/shared/widgets/components/hashicon_widget.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/address_book_dtos.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/utils/utils.dart';
+import 'package:spartan/shared/widgets/components/hashicon_widget.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/address_book_dtos.dart';
 
 class ContactDropdownMenuItem {
   static DropdownMenuItem<String> fromMapEntry(

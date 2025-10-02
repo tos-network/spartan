@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/shared/providers/snackbar_queue_provider.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/theme/input_decoration.dart';
-import 'package:sallet/shared/utils/utils.dart';
-import 'package:sallet/shared/widgets/components/generic_dialog.dart';
-import 'package:sallet/features/wallet/application/address_book_provider.dart';
-import 'package:sallet/src/generated/rust_bridge/api/utils.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/shared/providers/snackbar_queue_provider.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/input_decoration.dart';
+import 'package:spartan/shared/utils/utils.dart';
+import 'package:spartan/shared/widgets/components/generic_dialog.dart';
+import 'package:spartan/features/wallet/application/address_book_provider.dart';
+import 'package:spartan/src/generated/rust_bridge/api/utils.dart';
 import 'package:go_router/go_router.dart';
 
 class AddContactDialog extends ConsumerStatefulWidget {

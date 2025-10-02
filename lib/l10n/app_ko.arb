@@ -19,7 +19,7 @@
   "import_wallet_folder": "지갑을 가져오세요.",
   "new_wallet": "새 지갑",
   "recover_wallet": "가방 복구",
-  "create_new_wallet_message": "새로운 지갑을 만들어 Sallet를 시작하세요",
+  "create_new_wallet_message": "새로운 지갑을 만들어 Spartan를 시작하세요",
   "recover_from_seed_message": "복구 문구(24개 또는 25개 단어)를 사용하여 지갑을 복구하십시오",
   "recover_from_private_key_message": "복구 문구(24개 또는 25개 단어)를 사용하여 지갑을 복구하십시오",
   "private_key": "개인키",

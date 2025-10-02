@@ -1,4 +1,4 @@
-package network.tos.app.sallet
+package network.tos.app.spartan
 
 import io.flutter.embedding.android.FlutterActivity
 

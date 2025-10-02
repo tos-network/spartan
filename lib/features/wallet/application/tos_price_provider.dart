@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/wallet/domain/tos_price/coinpaprika/tos_ticker.dart';
+import 'package:spartan/features/wallet/domain/tos_price/coinpaprika/tos_ticker.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:http/http.dart' as http;
 

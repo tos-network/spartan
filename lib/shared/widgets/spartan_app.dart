@@ -1,27 +1,27 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/logger/logger.dart';
-import 'package:sallet/src/generated/l10n/app_localizations.dart';
+import 'package:spartan/features/logger/logger.dart';
+import 'package:spartan/src/generated/l10n/app_localizations.dart';
 import 'package:window_manager/window_manager.dart';
-import 'package:sallet/features/authentication/application/authentication_service.dart';
-import 'package:sallet/features/router/router.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/settings/domain/settings_state.dart';
-import 'package:sallet/shared/resources/app_resources.dart';
-import 'package:sallet/shared/theme/dark.dart';
-import 'package:sallet/shared/theme/light.dart';
-import 'package:sallet/shared/theme/tos.dart';
-import 'package:sallet/shared/widgets/app_initializer.dart';
+import 'package:spartan/features/authentication/application/authentication_service.dart';
+import 'package:spartan/features/router/router.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/settings/domain/settings_state.dart';
+import 'package:spartan/shared/resources/app_resources.dart';
+import 'package:spartan/shared/theme/dark.dart';
+import 'package:spartan/shared/theme/light.dart';
+import 'package:spartan/shared/theme/tos.dart';
+import 'package:spartan/shared/widgets/app_initializer.dart';
 
-class Sallet extends ConsumerStatefulWidget {
-  const Sallet({super.key});
+class Spartan extends ConsumerStatefulWidget {
+  const Spartan({super.key});
 
   @override
-  ConsumerState<Sallet> createState() => _SalletState();
+  ConsumerState<Spartan> createState() => _SpartanState();
 }
 
-class _SalletState extends ConsumerState<Sallet> with WindowListener {
+class _SpartanState extends ConsumerState<Spartan> with WindowListener {
   final _lightTheme = lightTheme();
   final _darkTheme = darkTheme();
   final _tosTheme = tosTheme();

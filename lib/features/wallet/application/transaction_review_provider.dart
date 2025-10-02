@@ -1,9 +1,9 @@
-import 'package:sallet/features/logger/logger.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/domain/transaction_review_state.dart';
-import 'package:sallet/features/wallet/domain/transaction_summary.dart';
-import 'package:sallet/shared/providers/provider_extensions.dart';
-import 'package:sallet/shared/utils/utils.dart';
+import 'package:spartan/features/logger/logger.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/domain/transaction_review_state.dart';
+import 'package:spartan/features/wallet/domain/transaction_summary.dart';
+import 'package:spartan/shared/providers/provider_extensions.dart';
+import 'package:spartan/shared/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'transaction_review_provider.g.dart';

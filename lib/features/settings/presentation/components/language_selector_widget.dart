@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/settings/domain/locale_translate_name.dart';
-import 'package:sallet/shared/resources/app_resources.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/src/generated/l10n/app_localizations.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/settings/domain/locale_translate_name.dart';
+import 'package:spartan/shared/resources/app_resources.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/src/generated/l10n/app_localizations.dart';
 
 class LanguageSelectorWidget extends ConsumerWidget {
   const LanguageSelectorWidget({super.key});

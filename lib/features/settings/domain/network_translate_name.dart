@@ -1,4 +1,4 @@
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
 
 String translateNetworkName(Network network) {
   switch (network) {

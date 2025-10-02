@@ -19,7 +19,7 @@
   "import_wallet_folder": "Importe een portemonnee",
   "new_wallet": "Nieuw portemonnee",
   "recover_wallet": "Herstel uw portemonnee",
-  "create_new_wallet_message": "Maak een nieuw portemonnee om met Sallet te beginnen",
+  "create_new_wallet_message": "Maak een nieuw portemonnee om met Spartan te beginnen",
   "recover_from_seed_message": "Herstel je portemonnee met behulp van je herstelzin (24 of 25 woorden)",
   "recover_from_private_key_message": "Herstel je portemonnee met behulp van je private sleutel (hexadecimaal formaat)",
   "private_key": "Privé sleutel",

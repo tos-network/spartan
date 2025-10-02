@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/authentication/application/authentication_service.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/domain/permission_rpc_request.dart';
-import 'package:sallet/features/wallet/domain/xswd_request_state.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/xswd_dtos.dart';
+import 'package:spartan/features/authentication/application/authentication_service.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/domain/permission_rpc_request.dart';
+import 'package:spartan/features/wallet/domain/xswd_request_state.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/xswd_dtos.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'xswd_providers.g.dart';

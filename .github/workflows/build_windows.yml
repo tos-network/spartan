@@ -43,5 +43,5 @@ jobs:
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: sallet-windows
+          name: spartan-windows
           path: build/windows/x64/runner/Release

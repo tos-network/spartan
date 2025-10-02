@@ -1,12 +1,12 @@
 import 'dart:ui';
 
-import 'package:sallet/features/wallet/domain/history_filter_state.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/features/wallet/domain/history_filter_state.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sallet/features/settings/data/settings_state_repository.dart';
-import 'package:sallet/features/settings/domain/settings_state.dart';
-import 'package:sallet/shared/storage/shared_preferences/shared_preferences_provider.dart';
-import 'package:sallet/shared/storage/shared_preferences/sallet_shared_preferences.dart';
+import 'package:spartan/features/settings/data/settings_state_repository.dart';
+import 'package:spartan/features/settings/domain/settings_state.dart';
+import 'package:spartan/shared/storage/shared_preferences/shared_preferences_provider.dart';
+import 'package:spartan/shared/storage/shared_preferences/spartan_shared_preferences.dart';
 
 part 'settings_state_provider.g.dart';
 
@@ -16,7 +16,7 @@ class Settings extends _$Settings {
   SettingsState build() {
     final prefs = ref.watch(sharedPreferencesProvider);
     final settingsStateRepository = SettingsStateRepository(
-      SalletSharedPreferences(prefs),
+      SpartanSharedPreferences(prefs),
     );
     return settingsStateRepository.fromStorage();
   }
@@ -24,7 +24,7 @@ class Settings extends _$Settings {
   void _setState(SettingsState state) {
     final prefs = ref.read(sharedPreferencesProvider);
     final settingsStateRepository = SettingsStateRepository(
-      SalletSharedPreferences(prefs),
+      SpartanSharedPreferences(prefs),
     );
     settingsStateRepository.localSave(state);
   }

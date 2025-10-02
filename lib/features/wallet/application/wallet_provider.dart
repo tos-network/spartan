@@ -2,31 +2,31 @@ import 'dart:async';
 import 'dart:collection';
 
 import 'package:flutter_rust_bridge/flutter_rust_bridge.dart';
-import 'package:sallet/features/wallet/application/address_book_provider.dart';
-import 'package:sallet/features/wallet/application/history_providers.dart';
-import 'package:sallet/features/wallet/application/xswd_providers.dart';
-import 'package:sallet/features/wallet/domain/mnemonic_languages.dart';
+import 'package:spartan/features/wallet/application/address_book_provider.dart';
+import 'package:spartan/features/wallet/application/history_providers.dart';
+import 'package:spartan/features/wallet/application/xswd_providers.dart';
+import 'package:spartan/features/wallet/domain/mnemonic_languages.dart';
 import 'package:flutter/foundation.dart';
-import 'package:sallet/features/authentication/application/secure_storage_provider.dart';
-import 'package:sallet/features/wallet/domain/multisig/multisig_state.dart';
-import 'package:sallet/features/wallet/domain/transaction_summary.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/address_book_dtos.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/xswd_dtos.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/wallet_dtos.dart';
-import 'package:sallet/shared/providers/snackbar_queue_provider.dart';
-import 'package:sallet/shared/resources/app_resources.dart';
-import 'package:sallet/shared/utils/utils.dart';
+import 'package:spartan/features/authentication/application/secure_storage_provider.dart';
+import 'package:spartan/features/wallet/domain/multisig/multisig_state.dart';
+import 'package:spartan/features/wallet/domain/transaction_summary.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/address_book_dtos.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/xswd_dtos.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/wallet_dtos.dart';
+import 'package:spartan/shared/providers/snackbar_queue_provider.dart';
+import 'package:spartan/shared/resources/app_resources.dart';
+import 'package:spartan/shared/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart' as sdk;
-import 'package:sallet/features/authentication/application/authentication_service.dart';
-import 'package:sallet/features/authentication/domain/authentication_state.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/wallet/application/network_nodes_provider.dart';
-import 'package:sallet/features/wallet/domain/event.dart';
-import 'package:sallet/features/wallet/domain/node_address.dart';
-import 'package:sallet/features/wallet/domain/wallet_snapshot.dart';
-import 'package:sallet/features/logger/logger.dart';
+import 'package:spartan/features/authentication/application/authentication_service.dart';
+import 'package:spartan/features/authentication/domain/authentication_state.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/wallet/application/network_nodes_provider.dart';
+import 'package:spartan/features/wallet/domain/event.dart';
+import 'package:spartan/features/wallet/domain/node_address.dart';
+import 'package:spartan/features/wallet/domain/wallet_snapshot.dart';
+import 'package:spartan/features/logger/logger.dart';
 
 part 'wallet_provider.g.dart';
 
@@ -335,7 +335,7 @@ class WalletState extends _$WalletState {
   Future<void> exportCsv(String path) async {
     if (state.nativeWalletRepository != null) {
       return state.nativeWalletRepository!.exportTransactionsToCsvFile(
-        '$path/sallet_transactions.csv',
+        '$path/spartan_transactions.csv',
       );
     }
   }

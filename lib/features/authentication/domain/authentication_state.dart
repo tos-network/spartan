@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sallet/features/wallet/data/native_wallet_repository.dart';
+import 'package:spartan/features/wallet/data/native_wallet_repository.dart';
 
 part 'authentication_state.freezed.dart';
 

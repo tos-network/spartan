@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/shared/theme/input_decoration.dart';
-import 'package:sallet/shared/widgets/components/generic_dialog.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/shared/theme/input_decoration.dart';
+import 'package:spartan/shared/widgets/components/generic_dialog.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/wallet/application/network_nodes_provider.dart';
-import 'package:sallet/features/wallet/domain/node_address.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/theme/constants.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/wallet/application/network_nodes_provider.dart';
+import 'package:spartan/features/wallet/domain/node_address.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/constants.dart';
 
 class AddNodeDialog extends ConsumerStatefulWidget {
   const AddNodeDialog({super.key});

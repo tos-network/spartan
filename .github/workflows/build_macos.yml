@@ -38,10 +38,10 @@ jobs:
         run: flutter build macos
 
       - name: Set app as executable
-        run: chmod +x build/macos/Build/Products/Release/sallet.app/Contents/MacOS/sallet
+        run: chmod +x build/macos/Build/Products/Release/spartan.app/Contents/MacOS/spartan
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: sallet-macos
-          path: build/macos/Build/Products/Release/sallet.app
+          name: spartan-macos
+          path: build/macos/Build/Products/Release/spartan.app

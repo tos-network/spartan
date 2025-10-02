@@ -1,4 +1,4 @@
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'multisig_pending_state_provider.g.dart';

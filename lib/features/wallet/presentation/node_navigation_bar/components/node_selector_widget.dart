@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/features/wallet/application/network_mismatch_provider.dart';
-import 'package:sallet/features/wallet/application/network_nodes_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/domain/node_address.dart';
-import 'package:sallet/features/wallet/presentation/node_navigation_bar/components/add_node_dialog.dart';
-import 'package:sallet/features/wallet/presentation/node_navigation_bar/components/modify_node_dialog.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/theme/constants.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/wallet/application/network_mismatch_provider.dart';
+import 'package:spartan/features/wallet/application/network_nodes_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/domain/node_address.dart';
+import 'package:spartan/features/wallet/presentation/node_navigation_bar/components/add_node_dialog.dart';
+import 'package:spartan/features/wallet/presentation/node_navigation_bar/components/modify_node_dialog.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/constants.dart';
 
 class NodeSelectorWidget extends ConsumerStatefulWidget {
   const NodeSelectorWidget({super.key});

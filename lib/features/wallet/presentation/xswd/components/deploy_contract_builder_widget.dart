@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/presentation/xswd/components/invoke_widget.dart';
-import 'package:sallet/features/wallet/presentation/xswd/components/transaction_builder_mixin.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/utils/utils.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/presentation/xswd/components/invoke_widget.dart';
+import 'package:spartan/features/wallet/presentation/xswd/components/transaction_builder_mixin.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/utils/utils.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart';
 
 class DeployContractBuilderWidget extends ConsumerStatefulWidget {

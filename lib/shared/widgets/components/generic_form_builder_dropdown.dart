@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 class GenericFormBuilderDropdown<T> extends StatelessWidget {
   const GenericFormBuilderDropdown({

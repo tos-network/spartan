@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/src/generated/l10n/app_localizations.dart';
+import 'package:spartan/src/generated/l10n/app_localizations.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
 
 part 'app_localizations_provider.g.dart';
 

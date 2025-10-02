@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/utils/utils.dart';
-import 'package:sallet/shared/widgets/components/generic_dialog.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/utils/utils.dart';
+import 'package:spartan/shared/widgets/components/generic_dialog.dart';
 
 class SeedContentDialog extends ConsumerStatefulWidget {
   const SeedContentDialog(this.seed, {super.key});
@@ -28,106 +28,113 @@ class _SeedContentDialogState extends ConsumerState<SeedContentDialog> {
       content: SizedBox(
         width: 800,
         height: 600,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Flexible(
-                    child: Text(
-                      '${loc.recovery_phrase.toLowerCase().capitalize()}:',
-                      style: context.titleLarge,
-                    ),
-                  ),
-                  IconButton.outlined(
-                    onPressed: () =>
-                        copyToClipboard(widget.seed.join(" "), ref, loc.copied),
-                    icon: Icon(Icons.copy, size: 18),
-                    tooltip: loc.copy_recovery_phrase,
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: Spaces.small),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: context.isHandset ? 2 : 3,
-                semanticChildCount: widget.seed.length,
-                childAspectRatio: 5,
-                mainAxisSpacing: Spaces.none,
-                crossAxisSpacing: Spaces.small,
-                shrinkWrap: true,
-                children: widget.seed.indexed
-                    .map<Widget>(
-                      ((int index, String word) tuple) => Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: Colors.white.withValues(alpha: 0.4),
-                            width: 1,
-                          ),
+        child: Scrollbar(
+          thumbVisibility: true,
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.only(right: 12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          '${loc.recovery_phrase.toLowerCase().capitalize()}:',
+                          style: context.titleLarge,
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            left: Spaces.medium,
-                            right: Spaces.medium,
+                      ),
+                      IconButton.outlined(
+                        onPressed: () =>
+                            copyToClipboard(widget.seed.join(" "), ref, loc.copied),
+                        icon: Icon(Icons.copy, size: 18),
+                        tooltip: loc.copy_recovery_phrase,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: Spaces.small),
+                GridView.count(
+                  crossAxisCount: context.isHandset ? 2 : 3,
+                  semanticChildCount: widget.seed.length,
+                  childAspectRatio: 5,
+                  mainAxisSpacing: Spaces.none,
+                  crossAxisSpacing: Spaces.small,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: widget.seed.indexed
+                      .map<Widget>(
+                        ((int index, String word) tuple) => Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.4),
+                              width: 1,
+                            ),
                           ),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    '${tuple.$1 + 1}',
-                                    style: context.bodyLarge?.copyWith(
-                                      color: context.colors.primary,
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              left: Spaces.medium,
+                              right: Spaces.medium,
+                            ),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      '${tuple.$1 + 1}',
+                                      style: context.bodyLarge?.copyWith(
+                                        color: context.colors.primary,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    tuple.$2,
-                                    style: context.titleMedium,
+                                Expanded(
+                                  flex: 2,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      tuple.$2,
+                                      style: context.titleMedium,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                    .toList(),
-              ),
-            ),
-            const SizedBox(height: Spaces.large),
-            FormBuilderCheckbox(
-              name: 'confirm',
-              title: Text(
-                'I confirm that I have written down my recovery phrase and understand the risks of sharing it.',
-                style: context.bodyMedium,
-              ),
-              validator: FormBuilderValidators.required(
-                errorText: loc.field_required_error,
-              ),
-              onChanged: (value) {
-                setState(() {
-                  _confirmed = value ?? false;
-                });
-              },
-            ),
-          ],
+                      )
+                      .toList(),
+                ),
+                const SizedBox(height: Spaces.large),
+                FormBuilderCheckbox(
+                  name: 'confirm',
+                  title: Text(
+                    'I confirm that I have written down my recovery phrase and understand the risks of sharing it.',
+                    style: context.bodyMedium,
+                  ),
+                  validator: FormBuilderValidators.required(
+                    errorText: loc.field_required_error,
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      _confirmed = value ?? false;
+                    });
+                  },
+                ),
+                const SizedBox(height: Spaces.extraLarge),
+            ],
+          ),
         ),
       ),
+    ),
       actions: [
         TextButton(
           onPressed: _confirmed

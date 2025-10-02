@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:sallet/features/logger/logger.dart';
+import 'package:spartan/features/logger/logger.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:window_manager/window_manager.dart';
 

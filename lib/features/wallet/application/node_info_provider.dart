@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/shared/utils/utils.dart';
+import 'package:spartan/shared/utils/utils.dart';
 import 'package:intl/intl.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/domain/daemon_info_snapshot.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/domain/daemon_info_snapshot.dart';
 
 part 'node_info_provider.g.dart';
 

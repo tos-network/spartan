@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:collection';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sallet/features/wallet/data/native_wallet_repository.dart';
-import 'package:sallet/features/wallet/domain/multisig/multisig_state.dart';
+import 'package:spartan/features/wallet/data/native_wallet_repository.dart';
+import 'package:spartan/features/wallet/domain/multisig/multisig_state.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart' as sdk;
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart'
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart'
     as rust;
 
 part 'wallet_snapshot.freezed.dart';

@@ -19,7 +19,7 @@
   "import_wallet_folder": "Importieren Sie ein Wallet",
   "new_wallet": "Neuer Portefeuille",
   "recover_wallet": "Bringen Sie Ihr Wallet wiederherzustellen",
-  "create_new_wallet_message": "Erstellen Sie ein neues Wallet, um mit Sallet zu beginnen",
+  "create_new_wallet_message": "Erstellen Sie ein neues Wallet, um mit Spartan zu beginnen",
   "recover_from_seed_message": "Stellen Sie Ihr Wallet anhand Ihrer Wiederherstellungsphrase (24 oder 25 Wörter) wieder her",
   "recover_from_private_key_message": "Stellen Sie Ihr Wallet anhand Ihres privaten Schlüssels (Hexadezimalformat) wieder her",
   "private_key": "Private Schlüssel",

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/presentation/components/logger_selector_widget.dart';
-import 'package:sallet/features/settings/presentation/components/reset_preference_button.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/widgets/components/custom_scaffold.dart';
+import 'package:spartan/features/settings/presentation/components/logger_selector_widget.dart';
+import 'package:spartan/features/settings/presentation/components/reset_preference_button.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/widgets/components/custom_scaffold.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/settings/presentation/components/layout_widget.dart';
-import 'package:sallet/features/settings/presentation/components/theme_selector_widget.dart';
-import 'package:sallet/features/settings/presentation/components/language_selector_widget.dart';
-import 'package:sallet/features/settings/presentation/components/network_selector_widget.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/utils/utils.dart';
-import 'package:sallet/shared/widgets/components/generic_app_bar_widget.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/settings/presentation/components/layout_widget.dart';
+import 'package:spartan/features/settings/presentation/components/theme_selector_widget.dart';
+import 'package:spartan/features/settings/presentation/components/language_selector_widget.dart';
+import 'package:spartan/features/settings/presentation/components/network_selector_widget.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/utils/utils.dart';
+import 'package:spartan/shared/widgets/components/generic_app_bar_widget.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});

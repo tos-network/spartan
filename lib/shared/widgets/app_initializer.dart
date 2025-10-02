@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sallet/shared/widgets/components/background_widget.dart';
-import 'package:sallet/shared/widgets/components/global_bottom_loader_widget.dart';
-import 'package:sallet/shared/widgets/components/snackbar_widget.dart';
-import 'package:sallet/shared/widgets/components/providers_initializer_widget.dart';
+import 'package:spartan/shared/widgets/components/background_widget.dart';
+import 'package:spartan/shared/widgets/components/global_bottom_loader_widget.dart';
+import 'package:spartan/shared/widgets/components/snackbar_widget.dart';
+import 'package:spartan/shared/widgets/components/providers_initializer_widget.dart';
 
 import 'components/network_bar_widget.dart';
 

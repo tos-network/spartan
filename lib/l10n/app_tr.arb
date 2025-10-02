@@ -19,7 +19,7 @@
   "import_wallet_folder": "Cüzdanı aktarın",
   "new_wallet": "Yeni cüzdan",
   "recover_wallet": "Cüzdanınızı geri yükleyin",
-  "create_new_wallet_message": "Yeni bir cüzdan oluşturarak Sallet'i kullanmaya başlayın",
+  "create_new_wallet_message": "Yeni bir cüzdan oluşturarak Spartan'i kullanmaya başlayın",
   "recover_from_seed_message": "Şifre cüzdanınızı kurtarmak için kurtarma ifadenizi (24 veya 25 kelime) kullanın",
   "recover_from_private_key_message": "Şifre cüzdanınızı kurtarmak için şifre anahtarınızı (onaltılık format) kullanın",
   "private_key": "Şifre anahtarı",

@@ -19,7 +19,7 @@
   "import_wallet_folder": "导入钱包",
   "new_wallet": "新钱包",
   "recover_wallet": "恢复你的钱包",
-  "create_new_wallet_message": "创建一个新的钱包，开始使用 Sallet",
+  "create_new_wallet_message": "创建一个新的钱包，开始使用 Spartan",
   "recover_from_seed_message": "从您的恢复短语（24个词或25个词）中恢复您的钱包",
   "recover_from_private_key_message": "从您的私钥（十六进制格式）中恢复您的钱包",
   "private_key": "私钥",

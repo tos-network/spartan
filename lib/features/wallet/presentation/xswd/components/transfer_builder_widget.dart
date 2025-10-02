@@ -2,17 +2,17 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/presentation/address_book/address_widget.dart';
-import 'package:sallet/features/wallet/presentation/xswd/components/transaction_builder_mixin.dart';
-import 'package:sallet/shared/resources/app_resources.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/utils/utils.dart';
-import 'package:sallet/src/generated/l10n/app_localizations.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/presentation/address_book/address_widget.dart';
+import 'package:spartan/features/wallet/presentation/xswd/components/transaction_builder_mixin.dart';
+import 'package:spartan/shared/resources/app_resources.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/utils/utils.dart';
+import 'package:spartan/src/generated/l10n/app_localizations.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart'
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart'
     as rust;
 
 class TransfersBuilderWidget extends ConsumerStatefulWidget {

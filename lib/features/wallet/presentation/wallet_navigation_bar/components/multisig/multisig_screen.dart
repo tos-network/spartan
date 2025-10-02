@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/multisig_pending_state_provider.dart';
-import 'package:sallet/features/wallet/application/transaction_review_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/presentation/address_book/address_widget.dart';
-import 'package:sallet/features/wallet/presentation/wallet_navigation_bar/components/multisig/setup_multisig_dialog.dart';
-import 'package:sallet/features/wallet/presentation/wallet_navigation_bar/components/multisig/sign_transaction_dialog.dart';
-import 'package:sallet/features/wallet/presentation/wallet_navigation_bar/components/transaction_dialog.dart';
-import 'package:sallet/shared/providers/snackbar_queue_provider.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/utils/utils.dart';
-import 'package:sallet/shared/widgets/components/custom_scaffold.dart';
-import 'package:sallet/shared/widgets/components/generic_app_bar_widget.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/multisig_pending_state_provider.dart';
+import 'package:spartan/features/wallet/application/transaction_review_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/presentation/address_book/address_widget.dart';
+import 'package:spartan/features/wallet/presentation/wallet_navigation_bar/components/multisig/setup_multisig_dialog.dart';
+import 'package:spartan/features/wallet/presentation/wallet_navigation_bar/components/multisig/sign_transaction_dialog.dart';
+import 'package:spartan/features/wallet/presentation/wallet_navigation_bar/components/transaction_dialog.dart';
+import 'package:spartan/shared/providers/snackbar_queue_provider.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/utils/utils.dart';
+import 'package:spartan/shared/widgets/components/custom_scaffold.dart';
+import 'package:spartan/shared/widgets/components/generic_app_bar_widget.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 
 class MultisigScreen extends ConsumerStatefulWidget {

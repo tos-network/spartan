@@ -1,8 +1,8 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
-import 'package:sallet/features/wallet/domain/node_address.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/features/wallet/domain/node_address.dart';
 
 part 'network_nodes_state.freezed.dart';
 

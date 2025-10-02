@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/features/wallet/presentation/assets_navigation_bar/components/tracked_asset_details.dart';
-import 'package:sallet/shared/resources/app_resources.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/theme/constants.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/presentation/assets_navigation_bar/components/tracked_asset_details.dart';
+import 'package:spartan/shared/resources/app_resources.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/constants.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart' as sdk;
 
 class TrackedAssetItem extends ConsumerStatefulWidget {

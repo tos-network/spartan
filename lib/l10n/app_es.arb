@@ -19,7 +19,7 @@
   "import_wallet_folder": "Importar una billetera",
   "new_wallet": "Nueva cartera",
   "recover_wallet": "Recupera tu cartera",
-  "create_new_wallet_message": "Crea una nueva cartera para empezar a usar Sallet",
+  "create_new_wallet_message": "Crea una nueva cartera para empezar a usar Spartan",
   "recover_from_seed_message": "Recupere su billetera con su frase de recuperación (24 o 25 palabras)",
   "recover_from_private_key_message": "Recupere su billetera con su clave privada (formato hexadecimal)",
   "private_key": "Clave privada",

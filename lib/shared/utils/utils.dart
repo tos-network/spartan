@@ -6,16 +6,16 @@ import 'dart:io';
 import 'dart:math';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/wallet/domain/destination_address.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
-import 'package:sallet/src/generated/rust_bridge/api/utils.dart';
-import 'package:sallet/shared/providers/snackbar_queue_provider.dart';
+import 'package:spartan/features/wallet/domain/destination_address.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/src/generated/rust_bridge/api/utils.dart';
+import 'package:spartan/shared/providers/snackbar_queue_provider.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:sallet/shared/resources/app_resources.dart';
+import 'package:spartan/shared/resources/app_resources.dart';
 import 'package:path/path.dart' as p;
 import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart' show NumberFormat, toBeginningOfSentenceCase;
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart'
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart'
     as rust;
 
 String formatCoin(int value, int decimals, String ticker) {

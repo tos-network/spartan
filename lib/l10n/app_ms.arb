@@ -19,7 +19,7 @@
   "import_wallet_folder": "Importir dompet",
   "new_wallet": "Dompet baru",
   "recover_wallet": "Pulihkan dompet anda",
-  "create_new_wallet_message": "Buat dompet baru untuk memulai penggunaan Sallet",
+  "create_new_wallet_message": "Buat dompet baru untuk memulai penggunaan Spartan",
   "recover_from_seed_message": "Pulihkan dompet Anda dari frase pemulihan Anda (24 atau 25 kata)",
   "recover_from_private_key_message": "Pulihkan dompet Anda dari kunci pribadi Anda (format heksadesimal)",
   "private_key": "Kunci pribadi",

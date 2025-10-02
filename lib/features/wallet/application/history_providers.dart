@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/settings_state_provider.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/wallet_dtos.dart';
+import 'package:spartan/features/settings/application/settings_state_provider.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/wallet_dtos.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:tos_dart_sdk/tos_dart_sdk.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
 
 part 'history_providers.g.dart';
 

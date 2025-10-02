@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:sallet/features/settings/data/settings_state_repository.dart';
-import 'package:sallet/features/wallet/data/network_nodes_state_repository.dart';
+import 'package:spartan/features/settings/data/settings_state_repository.dart';
+import 'package:spartan/features/wallet/data/network_nodes_state_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sallet/features/logger/logger.dart';
+import 'package:spartan/features/logger/logger.dart';
 
-class SalletSharedPreferences {
-  SalletSharedPreferences(this.prefs);
+class SpartanSharedPreferences {
+  SpartanSharedPreferences(this.prefs);
 
   final SharedPreferencesWithCache prefs;
 

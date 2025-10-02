@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "network.tos.app" "\0"
-            VALUE "FileDescription", "Sallet" "\0"
+            VALUE "FileDescription", "Spartan" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "sallet" "\0"
+            VALUE "InternalName", "spartan" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 network.tos.app. All rights reserved." "\0"
-            VALUE "OriginalFilename", "sallet.exe" "\0"
-            VALUE "ProductName", "sallet" "\0"
+            VALUE "OriginalFilename", "spartan.exe" "\0"
+            VALUE "ProductName", "spartan" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -1,7 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sallet/features/wallet/domain/tos_price/coinpaprika/quotes.dart';
+import 'package:spartan/features/wallet/domain/tos_price/coinpaprika/quotes.dart';
 
 part 'tos_ticker.freezed.dart';
 

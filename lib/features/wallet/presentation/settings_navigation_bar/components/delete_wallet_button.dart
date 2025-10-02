@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/authentication/application/biometric_auth_provider.dart';
-import 'package:sallet/features/authentication/application/wallets_state_provider.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-import 'package:sallet/shared/providers/snackbar_queue_provider.dart';
-import 'package:sallet/shared/theme/constants.dart';
-import 'package:sallet/shared/theme/extensions.dart';
-import 'package:sallet/shared/widgets/components/confirm_dialog.dart';
+import 'package:spartan/features/authentication/application/biometric_auth_provider.dart';
+import 'package:spartan/features/authentication/application/wallets_state_provider.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+import 'package:spartan/shared/providers/snackbar_queue_provider.dart';
+import 'package:spartan/shared/theme/constants.dart';
+import 'package:spartan/shared/theme/extensions.dart';
+import 'package:spartan/shared/widgets/components/confirm_dialog.dart';
 
 class DeleteWalletButton extends ConsumerStatefulWidget {
   const DeleteWalletButton({super.key});

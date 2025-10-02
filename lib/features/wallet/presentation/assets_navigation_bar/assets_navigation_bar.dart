@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/settings/application/app_localizations_provider.dart';
-import 'package:sallet/features/wallet/presentation/assets_navigation_bar/tracked_assets_tab.dart';
+import 'package:spartan/features/settings/application/app_localizations_provider.dart';
+import 'package:spartan/features/wallet/presentation/assets_navigation_bar/tracked_assets_tab.dart';
 
 import 'untracked_assets_tab.dart';
 

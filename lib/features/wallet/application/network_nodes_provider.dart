@@ -1,10 +1,10 @@
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sallet/features/wallet/data/network_nodes_state_repository.dart';
-import 'package:sallet/features/wallet/domain/network_nodes_state.dart';
-import 'package:sallet/features/wallet/domain/node_address.dart';
-import 'package:sallet/shared/storage/shared_preferences/shared_preferences_provider.dart';
-import 'package:sallet/shared/storage/shared_preferences/sallet_shared_preferences.dart';
+import 'package:spartan/features/wallet/data/network_nodes_state_repository.dart';
+import 'package:spartan/features/wallet/domain/network_nodes_state.dart';
+import 'package:spartan/features/wallet/domain/node_address.dart';
+import 'package:spartan/shared/storage/shared_preferences/shared_preferences_provider.dart';
+import 'package:spartan/shared/storage/shared_preferences/spartan_shared_preferences.dart';
 
 part 'network_nodes_provider.g.dart';
 
@@ -14,7 +14,7 @@ class NetworkNodes extends _$NetworkNodes {
   NetworkNodesState build() {
     final prefs = ref.watch(sharedPreferencesProvider);
     final networkNodesStateRepository = NetworkNodesStateRepository(
-      SalletSharedPreferences(prefs),
+      SpartanSharedPreferences(prefs),
     );
     return networkNodesStateRepository.fromStorage();
   }
@@ -22,7 +22,7 @@ class NetworkNodes extends _$NetworkNodes {
   void setNodes(Network network, List<NodeAddress> nodes) {
     final prefs = ref.read(sharedPreferencesProvider);
     final networkNodesStateRepository = NetworkNodesStateRepository(
-      SalletSharedPreferences(prefs),
+      SpartanSharedPreferences(prefs),
     );
 
     switch (network) {
@@ -41,7 +41,7 @@ class NetworkNodes extends _$NetworkNodes {
   void setNodeAddress(Network network, NodeAddress address) {
     final prefs = ref.read(sharedPreferencesProvider);
     final networkNodesStateRepository = NetworkNodesStateRepository(
-      SalletSharedPreferences(prefs),
+      SpartanSharedPreferences(prefs),
     );
 
     switch (network) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 extension InputDecorationUtils on BuildContext {
   InputDecoration get textInputDecoration => InputDecoration(

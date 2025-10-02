@@ -1,5 +1,5 @@
-import 'package:sallet/features/settings/domain/settings_state.dart';
-import 'package:sallet/src/generated/l10n/app_localizations.dart';
+import 'package:spartan/features/settings/domain/settings_state.dart';
+import 'package:spartan/src/generated/l10n/app_localizations.dart';
 
 String translateThemeName(AppLocalizations loc, AppTheme theme) {
   switch (theme) {

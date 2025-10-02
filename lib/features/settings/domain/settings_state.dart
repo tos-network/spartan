@@ -3,9 +3,9 @@
 import 'dart:ui';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sallet/features/wallet/domain/history_filter_state.dart';
-import 'package:sallet/src/generated/rust_bridge/api/models/network.dart';
-import 'package:sallet/features/settings/domain/locale_json_converter.dart';
+import 'package:spartan/features/wallet/domain/history_filter_state.dart';
+import 'package:spartan/src/generated/rust_bridge/api/models/network.dart';
+import 'package:spartan/features/settings/domain/locale_json_converter.dart';
 
 part 'settings_state.freezed.dart';
 

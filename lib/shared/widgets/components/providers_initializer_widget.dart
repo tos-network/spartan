@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sallet/features/wallet/application/wallet_provider.dart';
-// import 'package:sallet/shared/providers/progress_report_provider.dart';
+import 'package:spartan/features/wallet/application/wallet_provider.dart';
+// import 'package:spartan/shared/providers/progress_report_provider.dart';
 
 class ProvidersInitializerWidget extends ConsumerWidget {
   const ProvidersInitializerWidget({required this.child, super.key});

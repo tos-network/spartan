@@ -1,18 +1,18 @@
-# Sallet
+# Spartan
 
-Sallet is a multiplatform wallet for the TOS network. Built using the Flutter framework, it provides a convenient and secure way to manage your TOS cryptocurrency assets.
+Spartan is a multiplatform wallet for the TOS network. Built using the Flutter framework, it provides a convenient and secure way to manage your TOS cryptocurrency assets.
 
 This wallet harnesses the power of Rust by incorporating a native Rust library from the TOS blockchain, ensuring the same level of security as the TOS Wallet CLI.
 
 ## Name and Icon
 
-The name "Sallet" refers to the medieval combat helmet (also called celata, salade, or schaller) that was widely used in 15th century Europe. Just as the sallet helmet provided robust protection for warriors in battle, the Sallet wallet is designed to safeguard your digital assets with the highest security standards.
+The name "Spartan" refers to the legendary warriors of ancient Sparta, renowned for their discipline, courage, and unwavering commitment to protection. Just as Spartan warriors were known for their formidable defense, the Spartan wallet is designed to safeguard your digital assets with the highest security standards.
 
 Our app icon features a modern Spartan warrior helmet and shield design with:
 - **Split-color helmet**: Red and black halves symbolizing the duality of strength and stealth in protection
 - **Shield emblem**: Geometric shield outline representing comprehensive security
 - **Spartan T-visor**: The iconic face opening conveying vigilance and readiness
-- **Bold typography**: "SALLET" branding integrated directly into the emblem
+- **Bold typography**: "SPARTAN" branding integrated directly into the emblem
 - **Modern geometric style**: Clean lines and sharp angles for contemporary appeal
 
 This design philosophy reflects our commitment to protecting user assets with the warrior spirit - combining the vigilance of ancient Spartan defenders with modern security standards.
@@ -31,7 +31,7 @@ This design philosophy reflects our commitment to protecting user assets with th
 
 ## Installation
 
-Follow the steps below to install and run Sallet on your desired platform.
+Follow the steps below to install and run Spartan on your desired platform.
 
 ### Prerequisites
 
@@ -42,7 +42,7 @@ Follow the steps below to install and run Sallet on your desired platform.
 ### Clone the Repository
 
 ```
-git clone https://github.com/tos-project/sallet.git
+git clone https://github.com/tos-project/spartan.git
 ```
 
 ### Build and Run
@@ -50,7 +50,7 @@ git clone https://github.com/tos-project/sallet.git
 1. Navigate to the cloned repository:
 
 ```
-cd sallet
+cd spartan
 ```
 
 2. Install the required dependencies and generate glue code:
@@ -103,4 +103,4 @@ For platform-specific instructions and additional configuration steps, please re
 
 ## License
 
-Sallet is open source and licensed under the [GPL License](LICENSE). Feel free to modify and distribute the application as per the terms of the license.
+Spartan is open source and licensed under the [GPL License](LICENSE). Feel free to modify and distribute the application as per the terms of the license.

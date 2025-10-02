@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sallet/shared/resources/app_resources.dart';
-import 'package:sallet/shared/theme/extensions.dart';
+import 'package:spartan/shared/resources/app_resources.dart';
+import 'package:spartan/shared/theme/extensions.dart';
 
 class Background extends StatelessWidget {
   final Widget child;
