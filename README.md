@@ -4,6 +4,19 @@ Sallet is a multiplatform wallet for the TOS network. Built using the Flutter fr
 
 This wallet harnesses the power of Rust by incorporating a native Rust library from the TOS blockchain, ensuring the same level of security as the TOS Wallet CLI.
 
+## Name and Icon
+
+The name "Sallet" refers to the medieval combat helmet (also called celata, salade, or schaller) that was widely used in 15th century Europe. Just as the sallet helmet provided robust protection for warriors in battle, the Sallet wallet is designed to safeguard your digital assets with the highest security standards.
+
+Our app icon features a stylized sallet helmet with:
+- **Rounded crown**: Symbolizing comprehensive protection
+- **Face visor**: Representing privacy and security
+- **Neck guard**: Illustrating defense from all angles
+- **Metallic finish**: Conveying strength and durability
+- **Teal gradient background**: Matching the TOS network brand colors
+
+This design philosophy reflects our commitment to protecting user assets with the same reliability and strength that medieval armor provided to its wearers.
+
 ## Features
 
 - Securely store and manage your TOS tokens
