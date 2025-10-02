@@ -1,6 +1,12 @@
-# Spartan
+<div align="center">
+  <img src="assets/Spartan.png" alt="Spartan Logo" width="200"/>
 
-Spartan is a multiplatform wallet for the TOS network. Built using the Flutter framework, it provides a convenient and secure way to manage your TOS cryptocurrency assets.
+  # Spartan
+
+  <p><strong>A multiplatform wallet for the TOS network</strong></p>
+</div>
+
+Spartan is built using the Flutter framework, providing a convenient and secure way to manage your TOS cryptocurrency assets.
 
 This wallet harnesses the power of Rust by incorporating a native Rust library from the TOS blockchain, ensuring the same level of security as the TOS Wallet CLI.
 
