@@ -8,14 +8,14 @@ This wallet harnesses the power of Rust by incorporating a native Rust library f
 
 The name "Spartan" refers to the legendary warriors of ancient Sparta, renowned for their discipline, courage, and unwavering commitment to protection. Just as Spartan warriors were known for their formidable defense, the Spartan wallet is designed to safeguard your digital assets with the highest security standards.
 
-Our app icon features a modern Spartan warrior helmet and shield design with:
-- **Split-color helmet**: Red and black halves symbolizing the duality of strength and stealth in protection
-- **Shield emblem**: Geometric shield outline representing comprehensive security
-- **Spartan T-visor**: The iconic face opening conveying vigilance and readiness
-- **Bold typography**: "SPARTAN" branding integrated directly into the emblem
-- **Modern geometric style**: Clean lines and sharp angles for contemporary appeal
+Our app icon features a classic Spartan warrior helmet emblem with:
+- **Shield badge**: Golden shield-shaped border representing impenetrable protection
+- **Profile helmet**: Side-view Spartan helmet in gold, showcasing the iconic face guard and cheek plates
+- **Red horsehair crest**: Distinctive mohawk-style plume flowing from the helmet crown, a symbol of warrior status
+- **Vintage aesthetic**: Textured, weathered appearance evoking ancient strength and battle-tested reliability
+- **Dark background**: Deep black backdrop that makes the golden warrior stand out with authority
 
-This design philosophy reflects our commitment to protecting user assets with the warrior spirit - combining the vigilance of ancient Spartan defenders with modern security standards.
+This timeless design embodies our mission: to guard your crypto assets with the same unwavering vigilance and indomitable spirit that defined the ancient Spartan warriors.
 
 ## Features
 
