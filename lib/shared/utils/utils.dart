@@ -35,14 +35,7 @@ String formatTos(int value, rust.Network network) {
 }
 
 String getTosTicker(rust.Network network) {
-  switch (network) {
-    case rust.Network.mainnet:
-      return 'TOS';
-    case rust.Network.testnet:
-    case rust.Network.stagenet:
-    case rust.Network.devnet:
-      return 'TOT';
-  }
+  return 'TOS';
 }
 
 DestinationAddress parseRawAddress({required String rawAddress}) {
