@@ -1,0 +1,97 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#04e5b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#03a07e;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="512" cy="512" r="512" fill="url(#bgGradient)"/>
+
+  <g transform="translate(512, 512)">
+    <!-- Shield outline - bottom -->
+    <path d="M -200,200 L -250,100 L -270,-50 L -250,-200 L -100,-280 L 100,-280 L 250,-200 L 270,-50 L 250,100 L 200,200 L 0,280 Z"
+          fill="#2a3a4a" stroke="#1a2a3a" stroke-width="8"/>
+
+    <!-- Shield inner area -->
+    <path d="M -180,180 L -220,90 L -240,-40 L -220,-180 L -90,-250 L 90,-250 L 220,-180 L 240,-40 L 220,90 L 180,180 L 0,250 Z"
+          fill="#ffffff" stroke="none"/>
+
+    <!-- Spartan helmet - modern geometric style -->
+    <!-- Left half - RED/TEAL -->
+    <g>
+      <!-- Left helmet dome -->
+      <path d="M -5,-220 L -80,-200 L -120,-150 L -140,-80 L -140,0 L -120,80 L -80,140 L -5,165 Z"
+            fill="#e44b44" stroke="#1a2a3a" stroke-width="4"/>
+
+      <!-- Left cheek guard -->
+      <path d="M -140,-40 L -160,-20 L -170,20 L -170,80 L -160,120 L -140,150 L -100,140 L -100,80 L -110,20 L -110,-40 Z"
+            fill="#e44b44" stroke="#1a2a3a" stroke-width="3"/>
+
+      <!-- Left crest -->
+      <path d="M -40,-220 L -50,-300 L -30,-340 L -5,-350 L -5,-220 Z"
+            fill="#e44b44" stroke="#1a2a3a" stroke-width="3"/>
+    </g>
+
+    <!-- Right half - DARK/BLACK -->
+    <g>
+      <!-- Right helmet dome -->
+      <path d="M 5,-220 L 80,-200 L 120,-150 L 140,-80 L 140,0 L 120,80 L 80,140 L 5,165 Z"
+            fill="#1a2a3a" stroke="#1a2a3a" stroke-width="4"/>
+
+      <!-- Right cheek guard -->
+      <path d="M 140,-40 L 160,-20 L 170,20 L 170,80 L 160,120 L 140,150 L 100,140 L 100,80 L 110,20 L 110,-40 Z"
+            fill="#1a2a3a" stroke="#1a2a3a" stroke-width="3"/>
+
+      <!-- Right crest -->
+      <path d="M 40,-220 L 50,-300 L 30,-340 L 5,-350 L 5,-220 Z"
+            fill="#1a2a3a" stroke="#1a2a3a" stroke-width="3"/>
+    </g>
+
+    <!-- Center crest ridge -->
+    <rect x="-5" y="-350" width="10" height="130" fill="#0d1d29"/>
+
+    <!-- T-shaped face opening -->
+    <!-- Horizontal eye opening -->
+    <rect x="-130" y="-60" width="260" height="35" fill="#ffffff" stroke="#1a2a3a" stroke-width="3"/>
+
+    <!-- Vertical nose opening -->
+    <path d="M -30,-40 L -35,20 L -32,90 L -25,140 L -10,160 L 0,165 L 10,160 L 25,140 L 32,90 L 35,20 L 30,-40 Z"
+          fill="#ffffff" stroke="#1a2a3a" stroke-width="3"/>
+
+    <!-- Center dividing line (white highlight) -->
+    <rect x="-3" y="-220" width="6" height="385" fill="#ffffff" opacity="0.3"/>
+
+    <!-- Brow highlights -->
+    <path d="M -120,-80 Q -80,-90 -5,-92" fill="none" stroke="#ff6b6b" stroke-width="3" opacity="0.6"/>
+    <path d="M 120,-80 Q 80,-90 5,-92" fill="none" stroke="#0d1d29" stroke-width="3" opacity="0.4"/>
+
+    <!-- Helmet decorative lines -->
+    <ellipse cx="-100" cy="-100" rx="8" ry="8" fill="#1a2a3a"/>
+    <ellipse cx="-100" cy="0" rx="8" ry="8" fill="#1a2a3a"/>
+    <ellipse cx="-100" cy="100" rx="8" ry="8" fill="#1a2a3a"/>
+
+    <ellipse cx="100" cy="-100" rx="8" ry="8" fill="#0d1d29"/>
+    <ellipse cx="100" cy="0" rx="8" ry="8" fill="#0d1d29"/>
+    <ellipse cx="100" cy="100" rx="8" ry="8" fill="#0d1d29"/>
+
+    <!-- Shield geometric accents - angular design -->
+    <!-- Left accent -->
+    <path d="M -220,60 L -180,40 L -160,60 L -200,80 Z"
+          fill="#e44b44" stroke="#1a2a3a" stroke-width="3"/>
+    <path d="M -200,100 L -160,80 L -140,100 L -180,120 Z"
+          fill="#e44b44" stroke="#1a2a3a" stroke-width="3"/>
+
+    <!-- Right accent -->
+    <path d="M 220,60 L 180,40 L 160,60 L 200,80 Z"
+          fill="#1a2a3a" stroke="#1a2a3a" stroke-width="3"/>
+    <path d="M 200,100 L 160,80 L 140,100 L 180,120 Z"
+          fill="#1a2a3a" stroke="#1a2a3a" stroke-width="3"/>
+
+    <!-- Bottom shield point accent -->
+    <path d="M -40,220 L 0,260 L 40,220 L 0,240 Z"
+          fill="#2a3a4a" stroke="#1a2a3a" stroke-width="3"/>
+  </g>
+</svg>
