@@ -103,7 +103,7 @@ class _PasswordDialogState extends ConsumerState<PasswordDialog> {
               child: Padding(
                 padding: const EdgeInsets.only(
                   left: Spaces.medium,
-                  top: Spaces.large,
+                  top: Spaces.none,
                 ),
                 child: Text(
                   loc.authentication.capitalize(),
@@ -117,7 +117,7 @@ class _PasswordDialogState extends ConsumerState<PasswordDialog> {
             Padding(
               padding: const EdgeInsets.only(
                 right: Spaces.small,
-                top: Spaces.small,
+                top: Spaces.none,
               ),
               child: IconButton(
                 onPressed: () {
