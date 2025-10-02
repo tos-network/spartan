@@ -66,19 +66,20 @@ class GenericDialog extends StatelessWidget {
                         Spaces.medium,
                         Spaces.none,
                         Spaces.medium,
-                        Spaces.small,
+                        Spaces.medium,
                       ),
-                      child: AnimatedSize(
-                        alignment: Alignment.topCenter,
-                        duration: const Duration(milliseconds: AppDurations.animFast),
+                      child: ClipRect(
                         child: content!,
                       ),
                     ),
                   if (actions != null)
-                    Padding(
+                    Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF0d1d29),
+                      ),
                       padding: const EdgeInsets.fromLTRB(
                         Spaces.medium,
-                        Spaces.none,
+                        Spaces.medium,
                         Spaces.medium,
                         Spaces.medium,
                       ),

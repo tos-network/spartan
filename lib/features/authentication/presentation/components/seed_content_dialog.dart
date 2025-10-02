@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:spartan/shared/theme/extensions.dart';
 import 'package:spartan/features/settings/application/app_localizations_provider.dart';
@@ -18,8 +16,6 @@ class SeedContentDialog extends ConsumerStatefulWidget {
 }
 
 class _SeedContentDialogState extends ConsumerState<SeedContentDialog> {
-  bool _confirmed = false;
-
   @override
   Widget build(BuildContext context) {
     final loc = ref.watch(appLocalizationsProvider);
@@ -27,12 +23,13 @@ class _SeedContentDialogState extends ConsumerState<SeedContentDialog> {
       scrollable: false,
       content: SizedBox(
         width: 800,
-        height: 600,
-        child: Scrollbar(
-          thumbVisibility: true,
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.only(right: 12),
-            child: Column(
+        height: 400,
+        child: ClipRect(
+          child: Scrollbar(
+            thumbVisibility: true,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.only(right: 12, bottom: 20),
+              child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -61,8 +58,8 @@ class _SeedContentDialogState extends ConsumerState<SeedContentDialog> {
                 GridView.count(
                   crossAxisCount: context.isHandset ? 2 : 3,
                   semanticChildCount: widget.seed.length,
-                  childAspectRatio: 5,
-                  mainAxisSpacing: Spaces.none,
+                  childAspectRatio: 8,
+                  mainAxisSpacing: Spaces.extraSmall,
                   crossAxisSpacing: Spaces.small,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -71,16 +68,16 @@ class _SeedContentDialogState extends ConsumerState<SeedContentDialog> {
                         ((int index, String word) tuple) => Container(
                           decoration: BoxDecoration(
                             color: Colors.white.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(8),
                             border: Border.all(
                               color: Colors.white.withValues(alpha: 0.4),
                               width: 1,
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: Spaces.medium,
-                              right: Spaces.medium,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: Spaces.small,
+                              vertical: Spaces.extraSmall,
                             ),
                             child: Row(
                               children: [
@@ -114,34 +111,17 @@ class _SeedContentDialogState extends ConsumerState<SeedContentDialog> {
                       .toList(),
                 ),
                 const SizedBox(height: Spaces.large),
-                FormBuilderCheckbox(
-                  name: 'confirm',
-                  title: Text(
-                    'I confirm that I have written down my recovery phrase and understand the risks of sharing it.',
-                    style: context.bodyMedium,
-                  ),
-                  validator: FormBuilderValidators.required(
-                    errorText: loc.field_required_error,
-                  ),
-                  onChanged: (value) {
-                    setState(() {
-                      _confirmed = value ?? false;
-                    });
-                  },
-                ),
-                const SizedBox(height: Spaces.extraLarge),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     ),
       actions: [
         TextButton(
-          onPressed: _confirmed
-              ? () {
-                  Navigator.pop(context);
-                }
-              : null,
+          onPressed: () {
+            Navigator.pop(context);
+          },
           child: Text(loc.continue_button),
         ),
       ],
