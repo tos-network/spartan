@@ -1,15 +1,60 @@
-<svg width="2000" height="600" viewBox="0 0 2000 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- TOS Banner Logo - Green -->
-  <g transform="translate(500, 50)">
-    <!-- T -->
-    <rect x="0" y="100" width="200" height="60" fill="#FFFFFF" rx="10"/>
-    <rect x="70" y="100" width="60" height="400" fill="#FFFFFF" rx="10"/>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(512, 512)">
+    <!-- Shield base -->
+    <path d="M 0,-330 L 280,-230 L 320,-50 L 320,150 L 0,380 L -320,150 L -320,-50 L -280,-230 Z"
+          fill="#2a2a2a" stroke="#1a1a1a" stroke-width="10"/>
 
-    <!-- O -->
-    <circle cx="320" cy="300" r="120" stroke="#FFFFFF" stroke-width="60" fill="none"/>
+    <!-- Spartan Helmet - Red Left Side -->
+    <path d="M 0,-250 L -100,-230 L -150,-180 L -180,-100 L -190,0 L -180,100 L -140,180 L -60,220 L 0,230 L 0,-250 Z"
+          fill="#ed1c24" stroke="#1a1a1a" stroke-width="5"/>
 
-    <!-- S -->
-    <path d="M480 180 Q480 120, 540 120 Q600 120, 600 180 Q600 240, 540 240 Q480 240, 480 300 Q480 360, 540 360 Q600 360, 600 420 Q600 480, 540 480 Q480 480, 480 420"
-          stroke="#FFFFFF" stroke-width="60" fill="none" stroke-linecap="round"/>
+    <!-- Left cheek guard -->
+    <path d="M -180,-60 L -210,-30 L -230,30 L -235,100 L -225,160 L -200,200 L -160,220 L -140,180 L -150,100 L -150,0 L -145,-60 Z"
+          fill="#ed1c24" stroke="#1a1a1a" stroke-width="4"/>
+
+    <!-- Left crest -->
+    <path d="M -50,-250 L -60,-360 L -40,-400 L 0,-420 L 0,-250 Z"
+          fill="#ed1c24" stroke="#1a1a1a" stroke-width="4"/>
+
+    <!-- Spartan Helmet - Black Right Side -->
+    <path d="M 0,-250 L 100,-230 L 150,-180 L 180,-100 L 190,0 L 180,100 L 140,180 L 60,220 L 0,230 L 0,-250 Z"
+          fill="#2a2a2a" stroke="#1a1a1a" stroke-width="5"/>
+
+    <!-- Right cheek guard -->
+    <path d="M 180,-60 L 210,-30 L 230,30 L 235,100 L 225,160 L 200,200 L 160,220 L 140,180 L 150,100 L 150,0 L 145,-60 Z"
+          fill="#2a2a2a" stroke="#1a1a1a" stroke-width="4"/>
+
+    <!-- Right crest -->
+    <path d="M 50,-250 L 60,-360 L 40,-400 L 0,-420 L 0,-250 Z"
+          fill="#2a2a2a" stroke="#1a1a1a" stroke-width="4"/>
+
+    <!-- T-visor white -->
+    <rect x="-170" y="-70" width="340" height="45" rx="5" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+    <path d="M -35,-50 L -40,0 L -42,80 L -38,150 L -30,200 L -15,225 L 0,230 L 15,225 L 30,200 L 38,150 L 42,80 L 40,0 L 35,-50 Z"
+          fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+
+    <!-- Center line -->
+    <rect x="-4" y="-420" width="8" height="650" fill="#ffffff" opacity="0.4"/>
+
+    <!-- Decorative elements -->
+    <path d="M -260,-180 L -220,-160 L -200,-180 L -240,-200 Z" fill="#ed1c24" stroke="#1a1a1a" stroke-width="3"/>
+    <path d="M -280,-100 L -240,-80 L -220,-100 L -260,-120 Z" fill="#ed1c24" stroke="#1a1a1a" stroke-width="3"/>
+    <path d="M -290,0 L -250,20 L -230,0 L -270,-20 Z" fill="#ed1c24" stroke="#1a1a1a" stroke-width="3"/>
+    <path d="M -280,100 L -240,120 L -220,100 L -260,80 Z" fill="#ed1c24" stroke="#1a1a1a" stroke-width="3"/>
+
+    <path d="M 260,-180 L 220,-160 L 200,-180 L 240,-200 Z" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="3"/>
+    <path d="M 280,-100 L 240,-80 L 220,-100 L 260,-120 Z" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="3"/>
+    <path d="M 290,0 L 250,20 L 230,0 L 270,-20 Z" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="3"/>
+    <path d="M 280,100 L 240,120 L 220,100 L 260,80 Z" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="3"/>
+
+    <path d="M -60,300 L 0,340 L 60,300 L 0,320 Z" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="4"/>
   </g>
+
+  <!-- SALLET text -->
+  <text x="512" y="730" font-family="Arial Black, sans-serif" font-size="120" font-weight="900"
+        fill="#ed1c24" text-anchor="middle" letter-spacing="8">SALLET</text>
+
+  <!-- Shield bottom -->
+  <path d="M 250,650 L 512,850 L 774,650 L 760,670 L 512,840 L 264,670 Z"
+        fill="#2a2a2a" stroke="#1a1a1a" stroke-width="6"/>
 </svg>
