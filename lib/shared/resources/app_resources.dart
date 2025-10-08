@@ -21,54 +21,54 @@ class AppResources {
   static List<NodeAddress> mainnetNodes = [
     const NodeAddress(
       name: 'Seed Node US #1',
-      url: 'https://us-node.tos.io/',
+      url: 'us-node.tos.network',  // SDK will add wss:// and /json_rpc
     ),
     const NodeAddress(
       name: 'Seed Node France #1',
-      url: 'https://fr-node.tos.io/',
+      url: 'fr-node.tos.network',
     ),
     const NodeAddress(
       name: 'Seed Node Germany #1',
-      url: 'https://de-node.tos.io/',
+      url: 'de-node.tos.network',
     ),
     const NodeAddress(
       name: 'Seed Node Poland #1',
-      url: 'https://pl-node.tos.io/',
+      url: 'pl-node.tos.network',
     ),
     const NodeAddress(
       name: 'Seed Node Singapore #1',
-      url: 'https://sg-node.tos.io/',
+      url: 'sg-node.tos.network',
     ),
     const NodeAddress(
       name: 'Seed Node United Kingdom #1',
-      url: 'https://uk-node.tos.io/',
+      url: 'uk-node.tos.network',
     ),
     const NodeAddress(
       name: 'Seed Node Canada #1',
-      url: 'https://ca-node.tos.io/',
+      url: 'ca-node.tos.network',
     ),
   ];
 
   static List<NodeAddress> testnetNodes = [
     const NodeAddress(
       name: 'Official TOS Testnet',
-      url: 'https://${sdk.testnetNodeURL}',
+      url: sdk.testnetNodeURL,  // SDK will add wss:// and /json_rpc automatically
     ),
   ];
 
   static List<NodeAddress> devNodes = [
     const NodeAddress(
       name: 'Default Local Node',
-      url: 'http://${sdk.localhostAddress}',
+      url: sdk.localhostAddress,  // SDK will add ws:// and /json_rpc
     ),
     const NodeAddress(
       name: 'Android simulator localhost',
-      url: 'http://10.0.2.2:8080',
+      url: '10.0.2.2:8080',  // SDK will add ws:// and /json_rpc
     ),
   ];
 
-  static String explorerMainnetUrl = 'https://explorer.tos.io/';
-  static String explorerTestnetUrl = 'https://testnet-explorer.tos.io/';
+  static String explorerMainnetUrl = 'https://explorer.tos.network/';
+  static String explorerTestnetUrl = 'https://testnet-explorer.tos.network/';
 
   /*static String svgIconGreenTarget =
       'https://raw.githubusercontent.com/tos-project/tos-assets/master/icons/svg/transparent/green.svg';
