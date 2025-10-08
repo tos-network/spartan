@@ -169,7 +169,7 @@
   "launch_url_error": "Konnte nicht gestartet werden",
   "network_mismatch": "Netzwerk-Fehlanpassung zwischen Knoten und Wallet",
   "reconnect": "Erneut verbinden",
-  "new_incoming_transaction": "",
+  "new_incoming_transaction": "Neue eingehende Transaktion",
   "multiple_transfers_detected": "mehrfache Überweisungen erkannt",
   "outgoing_transaction_confirmed": "ausgehende Transaktion bestätigt",
   "new_mining_reward": "neue Bergrewards",

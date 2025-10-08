@@ -254,7 +254,7 @@
   "multisig_setup_message_2": "从那时起，您将无法在没有访问参与者的钱包的情况下转移资金或停用多重签名",
   "multisig_setup_message_3": "错误的设置可能导致资金损失",
   "threshold_formfield_label_text": "最低簽名數",
-  "threshold_formfield_error": "しきい値は参加者の数以下またはそれに等しくなければなりません",
+  "threshold_formfield_error": "阈值必须小于或等于参与者数量",
   "multisig_setup_confirmation_message": "多重簽名配置正確，參與者錢包可由其所有者訪問",
   "multisig_address_validation_error": "该地址不适用于多重签名",
   "multisig_participant_duplicated": "这个参与者重复了",

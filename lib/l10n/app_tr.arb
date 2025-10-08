@@ -176,7 +176,7 @@
   "burn_transaction_confirmed": "yakılan işlem onaylandı",
   "wallet_parameters": "cüzdan parametreleri",
   "unlock_burn_transfer": "token yakanma transferleri açmak",
-  "unlock_in_settings": "",
+  "unlock_in_settings": "ayarlarda kilidi aç",
   "review_burn": "İnceleme ve Yangın",
   "logger": "Kaydedici",
   "advanced_parameters": "Geliştirilmiş parametreler",

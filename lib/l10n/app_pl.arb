@@ -176,7 +176,7 @@
   "burn_transaction_confirmed": "potwierdzona transakcja, która została spalona",
   "wallet_parameters": "parametry portfela",
   "unlock_burn_transfer": "zablokowane przekazy spalania tokenów odblokować",
-  "unlock_in_settings": "",
+  "unlock_in_settings": "odblokuj w ustawieniach",
   "review_burn": "Weryfikacja i Palenie",
   "logger": "Loger",
   "advanced_parameters": "Parametry zaawansowane",
