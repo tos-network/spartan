@@ -22,10 +22,10 @@ class NodeInfoWidget extends ConsumerWidget {
           style: context.labelLarge?.copyWith(color: context.colors.primary),
         ),
         SelectableText(switch (info?.network) {
-          Network.mainnet => 'Mainnet',
-          Network.testnet => 'Testnet',
-          Network.stagenet => 'Stagenet',
-          Network.devnet => 'Devnet',
+          Network.mainnet => loc.mainnet,
+          Network.testnet => loc.testnet,
+          Network.stagenet => loc.stagenet,
+          Network.devnet => loc.devnet,
           null => '...',
         }, style: context.titleLarge),
         const SizedBox(height: Spaces.medium),
@@ -58,7 +58,7 @@ class NodeInfoWidget extends ConsumerWidget {
         }, style: context.titleLarge),
         const SizedBox(height: Spaces.medium),
         Text(
-          'Burned Supply',
+          loc.burn_supply,
           style: context.labelLarge?.copyWith(color: context.colors.primary),
         ),
         SelectableText(switch (info?.burnSupply) {
