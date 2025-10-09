@@ -15,8 +15,8 @@ parking_lot = "0.12.1"
 simplelog = "0.12.1"
 lazy_static = "1.4.0"
 serde_json = "1"
-tos_wallet = { path = "../../tos/wallet", package = "tos_wallet", default-features = false }
-tos_common = { path = "../../tos/common", package = "tos_common" }
+tos_wallet = { git = "https://github.com/tos-network/tos", package = "tos_wallet", default-features = false }
+tos_common = { git = "https://github.com/tos-network/tos", package = "tos_common" }
 serde = { version = "1.0.197", features = ["derive"] }
 trie-rs = "0.4.2"
 regex = "1.11.1"

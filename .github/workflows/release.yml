@@ -9,20 +9,9 @@ jobs:
   build-android:
     name: Build Android
     runs-on: windows-latest
-    defaults:
-      run:
-        working-directory: spartan
     steps:
-      - name: Checkout tos repository (dependency)
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          repository: tos-network/tos
-          path: tos
-
-      - name: Checkout spartan repository
-        uses: actions/checkout@v4
-        with:
-          path: spartan
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -58,25 +47,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-apk
-          path: spartan/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
 
   build-linux:
     name: Build Linux
     runs-on: ubuntu-22.04
-    defaults:
-      run:
-        working-directory: spartan
     steps:
-      - name: Checkout tos repository (dependency)
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          repository: tos-network/tos
-          path: tos
-
-      - name: Checkout spartan repository
-        uses: actions/checkout@v4
-        with:
-          path: spartan
 
       - name: Update packages
         run: sudo apt-get update -y
@@ -117,40 +95,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: linux-tarball
-          path: spartan/build/linux/x64/release/spartan-linux-x64.tar.gz
+          path: build/linux/x64/release/spartan-linux-x64.tar.gz
 
   build-windows:
     name: Build Windows
     runs-on: windows-latest
-    defaults:
-      run:
-        working-directory: spartan
-    env:
-      # Use shorter paths for Cargo build to avoid Windows 260 char limit
-      CARGO_TARGET_DIR: C:\cargo-target
-      # Tell aws-lc-sys to use prebuilt binaries instead of compiling
-      AWS_LC_SYS_PREBUILT_NASM: 1
     steps:
-      - name: Checkout tos repository (dependency)
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          repository: tos-network/tos
-          path: tos
-
-      - name: Checkout spartan repository
-        uses: actions/checkout@v4
-        with:
-          path: spartan
-
-      - name: Enable Windows long paths
-        working-directory: ${{ github.workspace }}
-        run: |
-          # Enable long path support in Windows registry
-          New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
-            -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
-          # Enable long paths for git
-          git config --system core.longpaths true
-        shell: powershell
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -183,25 +135,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-msix
-          path: spartan/build/windows/x64/runner/Release/*.msix
+          path: build/windows/x64/runner/Release/*.msix
 
   build-macos:
     name: Build macOS
     runs-on: macos-latest
-    defaults:
-      run:
-        working-directory: spartan
     steps:
-      - name: Checkout tos repository (dependency)
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          repository: tos-network/tos
-          path: tos
-
-      - name: Checkout spartan repository
-        uses: actions/checkout@v4
-        with:
-          path: spartan
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -246,7 +187,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: macos-zip
-          path: spartan/build/macos/Build/Products/Release/spartan-macos.zip
+          path: build/macos/Build/Products/Release/spartan-macos.zip
 
   create-release:
     name: Create Release

@@ -3312,6 +3312,7 @@ dependencies = [
 [[package]]
 name = "tos_common"
 version = "0.1.0"
+source = "git+https://github.com/tos-network/tos#61e83067b46067275786cf30928d9e3d1da95c4d"
 dependencies = [
  "actix-rt",
  "actix-web",
@@ -3363,6 +3364,7 @@ dependencies = [
 [[package]]
 name = "tos_wallet"
 version = "0.1.0"
+source = "git+https://github.com/tos-network/tos#61e83067b46067275786cf30928d9e3d1da95c4d"
 dependencies = [
  "actix-web",
  "actix-web-httpauth",
