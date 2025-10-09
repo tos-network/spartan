@@ -1,0 +1,233 @@
+name: Release Builds
+
+on:
+  push:
+    tags:
+      - 'v*'  # Match version tags like v0.0.8, v1.0.0, etc.
+
+jobs:
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+      version: ${{ steps.get_version.outputs.version }}
+    steps:
+      - name: Get version from tag
+        id: get_version
+        run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Spartan ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+  build-android:
+    name: Build Android
+    needs: create-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install Flutter Rust bridge
+        run: cargo install 'flutter_rust_bridge_codegen'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate bridge code
+        run: flutter_rust_bridge_codegen generate
+
+      - name: Generate Dart code
+        run: dart run build_runner build -d
+
+      - name: Build Android APK
+        run: flutter build apk --release
+
+      - name: Upload Android APK
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: build/app/outputs/flutter-apk/app-release.apk
+          asset_name: spartan-${{ needs.create-release.outputs.version }}-android.apk
+          asset_content_type: application/vnd.android.package-archive
+
+  build-linux:
+    name: Build Linux
+    needs: create-release
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Update packages
+        run: sudo apt-get update -y
+
+      - name: Install system libraries
+        run: sudo apt-get install -y clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install Flutter Rust bridge
+        run: cargo install 'flutter_rust_bridge_codegen'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate bridge code
+        run: flutter_rust_bridge_codegen generate
+
+      - name: Generate Dart code
+        run: dart run build_runner build -d
+
+      - name: Build Linux app
+        run: flutter build linux --release
+
+      - name: Package Linux build
+        run: |
+          cd build/linux/x64/release/bundle
+          tar -czf spartan-${{ needs.create-release.outputs.version }}-linux-x64.tar.gz *
+
+      - name: Upload Linux build
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: build/linux/x64/release/bundle/spartan-${{ needs.create-release.outputs.version }}-linux-x64.tar.gz
+          asset_name: spartan-${{ needs.create-release.outputs.version }}-linux-x64.tar.gz
+          asset_content_type: application/gzip
+
+  build-windows:
+    name: Build Windows
+    needs: create-release
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install Flutter Rust bridge
+        run: cargo install 'flutter_rust_bridge_codegen'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate bridge code
+        run: flutter_rust_bridge_codegen generate
+
+      - name: Generate Dart code
+        run: dart run build_runner build -d
+
+      - name: Build Windows app
+        run: flutter build windows --release
+
+      - name: Build MSIX package
+        run: dart run msix:create
+
+      - name: Upload Windows MSIX
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: build/windows/x64/runner/Release/spartan.msix
+          asset_name: spartan-${{ needs.create-release.outputs.version }}-windows.msix
+          asset_content_type: application/octet-stream
+
+  build-macos:
+    name: Build macOS
+    needs: create-release
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install Flutter Rust bridge
+        run: cargo install 'flutter_rust_bridge_codegen'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate bridge code
+        run: flutter_rust_bridge_codegen generate
+
+      - name: Generate Dart code
+        run: dart run build_runner build -d
+
+      - name: Build macOS app
+        run: flutter build macos --release
+
+      - name: Set app as executable
+        run: chmod +x build/macos/Build/Products/Release/spartan.app/Contents/MacOS/spartan
+
+      - name: Package macOS app
+        run: |
+          cd build/macos/Build/Products/Release
+          zip -r spartan-${{ needs.create-release.outputs.version }}-macos.zip spartan.app
+
+      - name: Upload macOS build
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: build/macos/Build/Products/Release/spartan-${{ needs.create-release.outputs.version }}-macos.zip
+          asset_name: spartan-${{ needs.create-release.outputs.version }}-macos.zip
+          asset_content_type: application/zip
