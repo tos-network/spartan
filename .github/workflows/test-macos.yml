@@ -1,0 +1,67 @@
+name: Test macOS Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-build:
+    name: Test macOS
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: spartan
+    steps:
+      - name: Checkout spartan repository
+        uses: actions/checkout@v4
+        with:
+          path: spartan
+
+      - name: Checkout tos repository
+        uses: actions/checkout@v4
+        with:
+          repository: tos-network/tos
+          path: tos
+
+      - name: Debug - Show directory structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo ""
+          echo "Parent directory contents:"
+          ls -la ..
+          echo ""
+          echo "Spartan directory contents:"
+          ls -la .
+          echo ""
+          echo "Rust directory:"
+          ls -la rust
+
+      - name: Debug - Check tos path from rust
+        run: |
+          cd rust
+          echo "From rust directory, checking ../../tos:"
+          ls -la ../../tos | head -10
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install Flutter Rust bridge
+        run: |
+          cargo install 'flutter_rust_bridge_codegen' --version 2.11.1
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate bridge code
+        run: flutter_rust_bridge_codegen generate
+
+      - name: Generate Dart code
+        run: dart run build_runner build -d
+
+      - name: Build macOS app (verbose)
+        run: flutter build macos --release --verbose
