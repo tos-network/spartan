@@ -109,8 +109,7 @@ class WalletState extends _$WalletState {
         final multisig = await state.nativeWalletRepository!.getMultisigState();
         if (multisig != null) state = state.copyWith(multisigState: multisig);
 
-        final tosBalance = await state.nativeWalletRepository!
-            .getTosBalance();
+        final tosBalance = await state.nativeWalletRepository!.getTosBalance();
         final balances = await state.nativeWalletRepository!
             .getTrackedBalances();
         final knownAssets = await state.nativeWalletRepository!
@@ -466,8 +465,7 @@ class WalletState extends _$WalletState {
 
       case BalanceChanged():
         talker.info(event);
-        final tosBalance = await state.nativeWalletRepository!
-            .getTosBalance();
+        final tosBalance = await state.nativeWalletRepository!.getTosBalance();
         final updatedBalances = await state.nativeWalletRepository!
             .getTrackedBalances();
         state = state.copyWith(

@@ -6,10 +6,7 @@ import 'package:spartan/features/settings/domain/settings_state.dart';
 import 'package:spartan/features/settings/domain/theme_translate_name.dart';
 import 'package:spartan/shared/theme/extensions.dart';
 
-const List<AppTheme> themes = <AppTheme>[
-  AppTheme.dark,
-  AppTheme.light,
-];
+const List<AppTheme> themes = <AppTheme>[AppTheme.dark, AppTheme.light];
 
 class ThemeSelectorWidget extends ConsumerWidget {
   const ThemeSelectorWidget({super.key});

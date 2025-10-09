@@ -35,9 +35,13 @@ class GenericDialog extends StatelessWidget {
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
                   colors: [
-                    const Color(0xFFe44b44).withValues(alpha: 0.3), // Red glow bottom-left
+                    const Color(
+                      0xFFe44b44,
+                    ).withValues(alpha: 0.3), // Red glow bottom-left
                     const Color(0xFF0d1d29), // Deep blue-black center
-                    const Color(0xFF03ca9b).withValues(alpha: 0.25), // Teal-green glow top-right
+                    const Color(
+                      0xFF03ca9b,
+                    ).withValues(alpha: 0.25), // Teal-green glow top-right
                   ],
                   stops: const [0.0, 0.5, 1.0],
                 ),
@@ -68,15 +72,11 @@ class GenericDialog extends StatelessWidget {
                         Spaces.medium,
                         Spaces.medium,
                       ),
-                      child: ClipRect(
-                        child: content!,
-                      ),
+                      child: ClipRect(child: content!),
                     ),
                   if (actions != null)
                     Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF0d1d29),
-                      ),
+                      decoration: BoxDecoration(color: const Color(0xFF0d1d29)),
                       padding: const EdgeInsets.fromLTRB(
                         Spaces.medium,
                         Spaces.medium,

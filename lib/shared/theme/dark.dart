@@ -10,7 +10,9 @@ ThemeData darkTheme() {
   const primaryColor = Color(0xFF03ca9b); // Teal green
   const secondaryColor = Color(0xFF82baf6); // Light blue
   const errorColor = Color(0xFFe44b44); // Red accent
-  const backgroundColor = Color(0xFF0d1d29); // Deep blue-black (rgb(13, 29, 41))
+  const backgroundColor = Color(
+    0xFF0d1d29,
+  ); // Deep blue-black (rgb(13, 29, 41))
   const surfaceColor = Color(0xFF172d3e); // Darker surface (rgb(23, 45, 62))
   final borderRadius = BorderRadius.circular(8.0);
 
@@ -153,10 +155,7 @@ ThemeData darkTheme() {
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(
-          color: Colors.white.withValues(alpha: 0.4),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.white.withValues(alpha: 0.4), width: 1),
       ),
     ),
 
@@ -165,10 +164,7 @@ ThemeData darkTheme() {
       style: OutlinedButton.styleFrom(
         backgroundColor: surfaceColor,
         foregroundColor: primaryColor,
-        side: const BorderSide(
-          color: primaryColor,
-          width: 1.5,
-        ),
+        side: const BorderSide(color: primaryColor, width: 1.5),
         padding: const EdgeInsets.symmetric(
           vertical: Spaces.medium,
           horizontal: Spaces.medium,
@@ -241,7 +237,10 @@ ThemeData darkTheme() {
         fontWeight: FontWeight.w500,
       ),
       selectedIconTheme: IconThemeData(size: 36, color: primaryColor),
-      unselectedIconTheme: IconThemeData(size: 30, color: textColor.withValues(alpha: 0.6)),
+      unselectedIconTheme: IconThemeData(
+        size: 30,
+        color: textColor.withValues(alpha: 0.6),
+      ),
     ),
 
     // INPUT
@@ -278,7 +277,10 @@ ThemeData darkTheme() {
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: borderRadius,
-        borderSide: BorderSide(color: surfaceColor.withValues(alpha: 0.5), width: 1),
+        borderSide: BorderSide(
+          color: surfaceColor.withValues(alpha: 0.5),
+          width: 1,
+        ),
       ),
     ),
 
@@ -297,10 +299,7 @@ ThemeData darkTheme() {
       barrierColor: Colors.black.withValues(alpha: 0.5),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(
-          color: Colors.white.withValues(alpha: 0.15),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.white.withValues(alpha: 0.15), width: 1),
       ),
       actionsPadding: const EdgeInsets.all(Spaces.medium),
     ),
@@ -329,10 +328,7 @@ ThemeData darkTheme() {
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
         ),
-        side: BorderSide(
-          color: Colors.white.withValues(alpha: 0.15),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.white.withValues(alpha: 0.15), width: 1),
       ),
     ),
 
@@ -341,7 +337,10 @@ ThemeData darkTheme() {
       decoration: BoxDecoration(
         color: backgroundColor.withValues(alpha: 0.95),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.15), width: 1),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.15),
+          width: 1,
+        ),
       ),
       textStyle: const TextStyle(color: textColor),
     ),
@@ -371,15 +370,16 @@ ThemeData darkTheme() {
       color: WidgetStatePropertyAll(Colors.white.withValues(alpha: 0.05)),
       elevation: 0,
       padding: const EdgeInsets.all(Spaces.small),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       brightness: Brightness.dark,
       side: WidgetStateBorderSide.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {
           return BorderSide(color: primaryColor, width: 1.5);
         }
-        return BorderSide(color: Colors.white.withValues(alpha: 0.15), width: 1);
+        return BorderSide(
+          color: Colors.white.withValues(alpha: 0.15),
+          width: 1,
+        );
       }),
     ),
 

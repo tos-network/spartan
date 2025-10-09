@@ -373,9 +373,7 @@ class NativeWalletRepository {
   Future<String> createMultisigTransfersTransaction(
     List<Transfer> transfers,
   ) async {
-    return _tosWallet.createMultisigTransfersTransaction(
-      transfers: transfers,
-    );
+    return _tosWallet.createMultisigTransfersTransaction(transfers: transfers);
   }
 
   Future<TransactionSummary> createBurnTransaction({

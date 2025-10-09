@@ -40,6 +40,15 @@ jobs:
       - name: Generate Dart code
         run: dart run build_runner build -d
 
+      - name: Run analyzer
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Check formatting
+        run: dart format --set-exit-if-changed .
+
       - name: Build Android APK
         run: flutter build apk --release
 
@@ -83,6 +92,15 @@ jobs:
       - name: Generate Dart code
         run: dart run build_runner build -d
 
+      - name: Run analyzer
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Check formatting
+        run: dart format --set-exit-if-changed .
+
       - name: Build Linux app
         run: flutter build linux --release
 
@@ -125,6 +143,15 @@ jobs:
       - name: Generate Dart code
         run: dart run build_runner build -d
 
+      - name: Run analyzer
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Check formatting
+        run: dart format --set-exit-if-changed .
+
       - name: Build Windows app
         run: flutter build windows --release
 
@@ -164,6 +191,15 @@ jobs:
 
       - name: Generate Dart code
         run: dart run build_runner build -d
+
+      - name: Run analyzer
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Check formatting
+        run: dart format --set-exit-if-changed .
 
       - name: Disable code signing for CI
         run: |

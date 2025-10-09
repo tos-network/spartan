@@ -21,20 +21,11 @@ class AppResources {
   static List<NodeAddress> mainnetNodes = [
     const NodeAddress(
       name: 'Seed Node US #1',
-      url: 'us-node.tos.network',  // SDK will add wss:// and /json_rpc
+      url: 'us-node.tos.network', // SDK will add wss:// and /json_rpc
     ),
-    const NodeAddress(
-      name: 'Seed Node France #1',
-      url: 'fr-node.tos.network',
-    ),
-    const NodeAddress(
-      name: 'Seed Node Germany #1',
-      url: 'de-node.tos.network',
-    ),
-    const NodeAddress(
-      name: 'Seed Node Poland #1',
-      url: 'pl-node.tos.network',
-    ),
+    const NodeAddress(name: 'Seed Node France #1', url: 'fr-node.tos.network'),
+    const NodeAddress(name: 'Seed Node Germany #1', url: 'de-node.tos.network'),
+    const NodeAddress(name: 'Seed Node Poland #1', url: 'pl-node.tos.network'),
     const NodeAddress(
       name: 'Seed Node Singapore #1',
       url: 'sg-node.tos.network',
@@ -43,27 +34,25 @@ class AppResources {
       name: 'Seed Node United Kingdom #1',
       url: 'uk-node.tos.network',
     ),
-    const NodeAddress(
-      name: 'Seed Node Canada #1',
-      url: 'ca-node.tos.network',
-    ),
+    const NodeAddress(name: 'Seed Node Canada #1', url: 'ca-node.tos.network'),
   ];
 
   static List<NodeAddress> testnetNodes = [
     const NodeAddress(
       name: 'Official TOS Testnet',
-      url: sdk.testnetNodeURL,  // SDK will add wss:// and /json_rpc automatically
+      url:
+          sdk.testnetNodeURL, // SDK will add wss:// and /json_rpc automatically
     ),
   ];
 
   static List<NodeAddress> devNodes = [
     const NodeAddress(
       name: 'Default Local Node',
-      url: sdk.localhostAddress,  // SDK will add ws:// and /json_rpc
+      url: sdk.localhostAddress, // SDK will add ws:// and /json_rpc
     ),
     const NodeAddress(
       name: 'Android simulator localhost',
-      url: '10.0.2.2:8080',  // SDK will add ws:// and /json_rpc
+      url: '10.0.2.2:8080', // SDK will add ws:// and /json_rpc
     ),
   ];
 

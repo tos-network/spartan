@@ -78,8 +78,8 @@ dev_dependencies:
   riverpod_generator: ^2.6.5
   riverpod_lint: ^2.6.5
   msix: ^3.16.9
-  #  flutter_test:
-  #    sdk: flutter
+  flutter_test:
+    sdk: flutter
   #  integration_test:
   #    sdk: flutter
 

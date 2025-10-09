@@ -30,93 +30,96 @@ class _SeedContentDialogState extends ConsumerState<SeedContentDialog> {
             child: SingleChildScrollView(
               padding: const EdgeInsets.only(right: 12, bottom: 20),
               child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Flexible(
-                        child: Text(
-                          '${loc.recovery_phrase.toLowerCase().capitalize()}:',
-                          style: context.titleLarge,
-                        ),
-                      ),
-                      IconButton.outlined(
-                        onPressed: () =>
-                            copyToClipboard(widget.seed.join(" "), ref, loc.copied),
-                        icon: Icon(Icons.copy, size: 18),
-                        tooltip: loc.copy_recovery_phrase,
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: Spaces.small),
-                GridView.count(
-                  crossAxisCount: context.isHandset ? 2 : 3,
-                  semanticChildCount: widget.seed.length,
-                  childAspectRatio: 8,
-                  mainAxisSpacing: Spaces.extraSmall,
-                  crossAxisSpacing: Spaces.small,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: widget.seed.indexed
-                      .map<Widget>(
-                        ((int index, String word) tuple) => Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.4),
-                              width: 1,
-                            ),
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            '${loc.recovery_phrase.toLowerCase().capitalize()}:',
+                            style: context.titleLarge,
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: Spaces.small,
-                              vertical: Spaces.extraSmall,
+                        ),
+                        IconButton.outlined(
+                          onPressed: () => copyToClipboard(
+                            widget.seed.join(" "),
+                            ref,
+                            loc.copied,
+                          ),
+                          icon: Icon(Icons.copy, size: 18),
+                          tooltip: loc.copy_recovery_phrase,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: Spaces.small),
+                  GridView.count(
+                    crossAxisCount: context.isHandset ? 2 : 3,
+                    semanticChildCount: widget.seed.length,
+                    childAspectRatio: 8,
+                    mainAxisSpacing: Spaces.extraSmall,
+                    crossAxisSpacing: Spaces.small,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: widget.seed.indexed
+                        .map<Widget>(
+                          ((int index, String word) tuple) => Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.4),
+                                width: 1,
+                              ),
                             ),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      '${tuple.$1 + 1}',
-                                      style: context.bodyLarge?.copyWith(
-                                        color: context.colors.primary,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: Spaces.small,
+                                vertical: Spaces.extraSmall,
+                              ),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        '${tuple.$1 + 1}',
+                                        style: context.bodyLarge?.copyWith(
+                                          color: context.colors.primary,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  flex: 2,
-                                  child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    child: Text(
-                                      tuple.$2,
-                                      style: context.titleMedium,
+                                  Expanded(
+                                    flex: 2,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        tuple.$2,
+                                        style: context.titleMedium,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      )
-                      .toList(),
-                ),
-                const SizedBox(height: Spaces.large),
-              ],
+                        )
+                        .toList(),
+                  ),
+                  const SizedBox(height: Spaces.large),
+                ],
+              ),
             ),
           ),
         ),
       ),
-    ),
       actions: [
         TextButton(
           onPressed: () {

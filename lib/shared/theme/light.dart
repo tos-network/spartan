@@ -153,10 +153,7 @@ ThemeData lightTheme() {
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(
-          color: Colors.black.withValues(alpha: 0.1),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.black.withValues(alpha: 0.1), width: 1),
       ),
     ),
 
@@ -165,10 +162,7 @@ ThemeData lightTheme() {
       style: OutlinedButton.styleFrom(
         backgroundColor: surfaceColor,
         foregroundColor: primaryColor,
-        side: const BorderSide(
-          color: primaryColor,
-          width: 1.5,
-        ),
+        side: const BorderSide(color: primaryColor, width: 1.5),
         padding: const EdgeInsets.symmetric(
           vertical: Spaces.medium,
           horizontal: Spaces.medium,
@@ -241,7 +235,10 @@ ThemeData lightTheme() {
         fontWeight: FontWeight.w500,
       ),
       selectedIconTheme: IconThemeData(size: 36, color: primaryColor),
-      unselectedIconTheme: IconThemeData(size: 30, color: textColor.withValues(alpha: 0.6)),
+      unselectedIconTheme: IconThemeData(
+        size: 30,
+        color: textColor.withValues(alpha: 0.6),
+      ),
     ),
 
     // INPUT
@@ -278,7 +275,10 @@ ThemeData lightTheme() {
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: borderRadius,
-        borderSide: BorderSide(color: surfaceColor.withValues(alpha: 0.5), width: 1),
+        borderSide: BorderSide(
+          color: surfaceColor.withValues(alpha: 0.5),
+          width: 1,
+        ),
       ),
     ),
 
@@ -297,10 +297,7 @@ ThemeData lightTheme() {
       barrierColor: Colors.black.withValues(alpha: 0.3),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(
-          color: Colors.black.withValues(alpha: 0.1),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.black.withValues(alpha: 0.1), width: 1),
       ),
       actionsPadding: const EdgeInsets.all(Spaces.medium),
     ),
@@ -329,10 +326,7 @@ ThemeData lightTheme() {
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
         ),
-        side: BorderSide(
-          color: Colors.black.withValues(alpha: 0.1),
-          width: 1,
-        ),
+        side: BorderSide(color: Colors.black.withValues(alpha: 0.1), width: 1),
       ),
     ),
 
@@ -341,7 +335,10 @@ ThemeData lightTheme() {
       decoration: BoxDecoration(
         color: backgroundColor.withValues(alpha: 0.95),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.black.withValues(alpha: 0.1), width: 1),
+        border: Border.all(
+          color: Colors.black.withValues(alpha: 0.1),
+          width: 1,
+        ),
       ),
       textStyle: const TextStyle(color: textColor),
     ),
@@ -371,9 +368,7 @@ ThemeData lightTheme() {
       color: WidgetStatePropertyAll(Colors.black.withValues(alpha: 0.03)),
       elevation: 0,
       padding: const EdgeInsets.all(Spaces.small),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       brightness: Brightness.light,
       side: WidgetStateBorderSide.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {

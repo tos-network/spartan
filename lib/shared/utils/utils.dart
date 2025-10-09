@@ -28,9 +28,7 @@ String formatCoin(int value, int decimals, String ticker) {
 String formatTos(int value, rust.Network network) {
   final pattern = '#,##0.${'#' * AppResources.tosDecimals}';
   final formatter = NumberFormat(pattern);
-  final tosValue = formatter.format(
-    value / pow(10, AppResources.tosDecimals),
-  );
+  final tosValue = formatter.format(value / pow(10, AppResources.tosDecimals));
   return '$tosValue ${getTosTicker(network)}';
 }
 

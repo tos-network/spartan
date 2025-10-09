@@ -70,8 +70,7 @@ class IncomingEntryContent extends ConsumerWidget {
               itemBuilder: (BuildContext context, int index) {
                 final transfer = transfers[index];
                 final isTos = transfer.asset == tosAsset;
-                final tosImagePath =
-                    AppResources.greenBackgroundBlackIconPath;
+                final tosImagePath = AppResources.greenBackgroundBlackIconPath;
 
                 String asset;
                 String amount;

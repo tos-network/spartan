@@ -11,7 +11,8 @@ class Background extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceContainerHighest, // Base dark background
+        color:
+            theme.colorScheme.surfaceContainerHighest, // Base dark background
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -19,7 +20,9 @@ class Background extends StatelessWidget {
             center: Alignment.bottomRight,
             radius: 1.2,
             colors: [
-              const Color(0xFFe44b44).withValues(alpha: 0.25), // Red glow, subtle
+              const Color(
+                0xFFe44b44,
+              ).withValues(alpha: 0.25), // Red glow, subtle
               theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.0),
             ],
           ),
@@ -30,8 +33,12 @@ class Background extends StatelessWidget {
               center: Alignment.centerLeft,
               radius: 1.4,
               colors: [
-                const Color(0xFF03ca9b).withValues(alpha: 0.18), // Teal-green glow, slightly stronger and wider
-                theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.0),
+                const Color(0xFF03ca9b).withValues(
+                  alpha: 0.18,
+                ), // Teal-green glow, slightly stronger and wider
+                theme.colorScheme.surfaceContainerHighest.withValues(
+                  alpha: 0.0,
+                ),
               ],
             ),
           ),

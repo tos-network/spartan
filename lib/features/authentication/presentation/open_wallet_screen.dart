@@ -84,7 +84,9 @@ class _OpenWalletWidgetState extends ConsumerState<OpenWalletScreen> {
                           for (final name in wallets.keys)
                             Container(
                               key: Key(name),
-                              margin: const EdgeInsets.only(bottom: Spaces.small),
+                              margin: const EdgeInsets.only(
+                                bottom: Spaces.small,
+                              ),
                               decoration: BoxDecoration(
                                 color: Colors.white.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(10),
@@ -98,7 +100,9 @@ class _OpenWalletWidgetState extends ConsumerState<OpenWalletScreen> {
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(10),
                                   onTap: () async {
-                                    if (!await _openWalletWithBiometrics(name)) {
+                                    if (!await _openWalletWithBiometrics(
+                                      name,
+                                    )) {
                                       if (context.mounted) {
                                         showDialog<void>(
                                           context: context,
@@ -114,7 +118,9 @@ class _OpenWalletWidgetState extends ConsumerState<OpenWalletScreen> {
                                     }
                                   },
                                   child: Padding(
-                                    padding: const EdgeInsets.all(Spaces.medium),
+                                    padding: const EdgeInsets.all(
+                                      Spaces.medium,
+                                    ),
                                     child: Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
