@@ -9,15 +9,20 @@ jobs:
   build-android:
     name: Build Android
     runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: spartan
     steps:
-      - name: Checkout spartan repository
-        uses: actions/checkout@v4
-
-      - name: Checkout tos repository
+      - name: Checkout tos repository (dependency)
         uses: actions/checkout@v4
         with:
           repository: tos-network/tos
-          path: ../tos
+          path: tos
+
+      - name: Checkout spartan repository
+        uses: actions/checkout@v4
+        with:
+          path: spartan
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -53,20 +58,25 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: spartan/build/app/outputs/flutter-apk/app-release.apk
 
   build-linux:
     name: Build Linux
     runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: spartan
     steps:
-      - name: Checkout spartan repository
-        uses: actions/checkout@v4
-
-      - name: Checkout tos repository
+      - name: Checkout tos repository (dependency)
         uses: actions/checkout@v4
         with:
           repository: tos-network/tos
-          path: ../tos
+          path: tos
+
+      - name: Checkout spartan repository
+        uses: actions/checkout@v4
+        with:
+          path: spartan
 
       - name: Update packages
         run: sudo apt-get update -y
@@ -107,20 +117,25 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: linux-tarball
-          path: build/linux/x64/release/spartan-linux-x64.tar.gz
+          path: spartan/build/linux/x64/release/spartan-linux-x64.tar.gz
 
   build-windows:
     name: Build Windows
     runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: spartan
     steps:
-      - name: Checkout spartan repository
-        uses: actions/checkout@v4
-
-      - name: Checkout tos repository
+      - name: Checkout tos repository (dependency)
         uses: actions/checkout@v4
         with:
           repository: tos-network/tos
-          path: ../tos
+          path: tos
+
+      - name: Checkout spartan repository
+        uses: actions/checkout@v4
+        with:
+          path: spartan
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -153,20 +168,25 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-msix
-          path: build/windows/x64/runner/Release/*.msix
+          path: spartan/build/windows/x64/runner/Release/*.msix
 
   build-macos:
     name: Build macOS
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: spartan
     steps:
-      - name: Checkout spartan repository
-        uses: actions/checkout@v4
-
-      - name: Checkout tos repository
+      - name: Checkout tos repository (dependency)
         uses: actions/checkout@v4
         with:
           repository: tos-network/tos
-          path: ../tos
+          path: tos
+
+      - name: Checkout spartan repository
+        uses: actions/checkout@v4
+        with:
+          path: spartan
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -211,7 +231,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: macos-zip
-          path: build/macos/Build/Products/Release/spartan-macos.zip
+          path: spartan/build/macos/Build/Products/Release/spartan-macos.zip
 
   create-release:
     name: Create Release
