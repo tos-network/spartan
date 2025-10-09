@@ -189,6 +189,13 @@ jobs:
       - name: Generate Dart code
         run: dart run build_runner build -d
 
+      - name: Disable code signing for CI
+        run: |
+          # Disable code signing in Xcode project
+          sed -i '' 's/CODE_SIGN_IDENTITY = .*/CODE_SIGN_IDENTITY = "";/g' macos/Runner.xcodeproj/project.pbxproj
+          sed -i '' 's/CODE_SIGN_STYLE = .*/CODE_SIGN_STYLE = Manual;/g' macos/Runner.xcodeproj/project.pbxproj
+          sed -i '' 's/DEVELOPMENT_TEAM = .*/DEVELOPMENT_TEAM = "";/g' macos/Runner.xcodeproj/project.pbxproj
+
       - name: Build macOS app
         run: flutter build macos --release
 
