@@ -131,15 +131,6 @@ jobs:
       # Tell aws-lc-sys to use prebuilt binaries instead of compiling
       AWS_LC_SYS_PREBUILT_NASM: 1
     steps:
-      - name: Enable Windows long paths
-        run: |
-          # Enable long path support in Windows registry
-          New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
-            -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
-          # Enable long paths for git
-          git config --system core.longpaths true
-        shell: powershell
-
       - name: Checkout tos repository (dependency)
         uses: actions/checkout@v4
         with:
@@ -150,6 +141,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: spartan
+
+      - name: Enable Windows long paths
+        working-directory: ${{ github.workspace }}
+        run: |
+          # Enable long path support in Windows registry
+          New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
+            -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+          # Enable long paths for git
+          git config --system core.longpaths true
+        shell: powershell
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
