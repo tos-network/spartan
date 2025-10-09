@@ -6,31 +6,8 @@ on:
       - 'v*'  # Match version tags like v0.0.8, v1.0.0, etc.
 
 jobs:
-  create-release:
-    name: Create Release
-    runs-on: ubuntu-latest
-    outputs:
-      upload_url: ${{ steps.create_release.outputs.upload_url }}
-      version: ${{ steps.get_version.outputs.version }}
-    steps:
-      - name: Get version from tag
-        id: get_version
-        run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Spartan ${{ github.ref }}
-          draft: false
-          prerelease: false
-
   build-android:
     name: Build Android
-    needs: create-release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -43,10 +20,7 @@ jobs:
           java-version: '17'
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
+        uses: dtolnay/rust-toolchain@stable
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
@@ -54,7 +28,7 @@ jobs:
           channel: stable
 
       - name: Install Flutter Rust bridge
-        run: cargo install 'flutter_rust_bridge_codegen'
+        run: cargo install flutter_rust_bridge_codegen
 
       - name: Install dependencies
         run: flutter pub get
@@ -69,18 +43,13 @@ jobs:
         run: flutter build apk --release
 
       - name: Upload Android APK
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/upload-artifact@v4
         with:
-          upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: build/app/outputs/flutter-apk/app-release.apk
-          asset_name: spartan-${{ needs.create-release.outputs.version }}-android.apk
-          asset_content_type: application/vnd.android.package-archive
+          name: android-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
 
   build-linux:
     name: Build Linux
-    needs: create-release
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
@@ -93,10 +62,7 @@ jobs:
         run: sudo apt-get install -y clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
+        uses: dtolnay/rust-toolchain@stable
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
@@ -104,7 +70,7 @@ jobs:
           channel: stable
 
       - name: Install Flutter Rust bridge
-        run: cargo install 'flutter_rust_bridge_codegen'
+        run: cargo install flutter_rust_bridge_codegen
 
       - name: Install dependencies
         run: flutter pub get
@@ -121,31 +87,23 @@ jobs:
       - name: Package Linux build
         run: |
           cd build/linux/x64/release/bundle
-          tar -czf spartan-${{ needs.create-release.outputs.version }}-linux-x64.tar.gz *
+          tar -czf ../spartan-linux-x64.tar.gz *
 
       - name: Upload Linux build
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/upload-artifact@v4
         with:
-          upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: build/linux/x64/release/bundle/spartan-${{ needs.create-release.outputs.version }}-linux-x64.tar.gz
-          asset_name: spartan-${{ needs.create-release.outputs.version }}-linux-x64.tar.gz
-          asset_content_type: application/gzip
+          name: linux-tarball
+          path: build/linux/x64/release/spartan-linux-x64.tar.gz
 
   build-windows:
     name: Build Windows
-    needs: create-release
     runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
+        uses: dtolnay/rust-toolchain@stable
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
@@ -153,7 +111,7 @@ jobs:
           channel: stable
 
       - name: Install Flutter Rust bridge
-        run: cargo install 'flutter_rust_bridge_codegen'
+        run: cargo install flutter_rust_bridge_codegen
 
       - name: Install dependencies
         run: flutter pub get
@@ -171,28 +129,20 @@ jobs:
         run: dart run msix:create
 
       - name: Upload Windows MSIX
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/upload-artifact@v4
         with:
-          upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: build/windows/x64/runner/Release/spartan.msix
-          asset_name: spartan-${{ needs.create-release.outputs.version }}-windows.msix
-          asset_content_type: application/octet-stream
+          name: windows-msix
+          path: build/windows/x64/runner/Release/*.msix
 
   build-macos:
     name: Build macOS
-    needs: create-release
     runs-on: macos-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
+        uses: dtolnay/rust-toolchain@stable
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
@@ -200,7 +150,7 @@ jobs:
           channel: stable
 
       - name: Install Flutter Rust bridge
-        run: cargo install 'flutter_rust_bridge_codegen'
+        run: cargo install flutter_rust_bridge_codegen
 
       - name: Install dependencies
         run: flutter pub get
@@ -220,14 +170,48 @@ jobs:
       - name: Package macOS app
         run: |
           cd build/macos/Build/Products/Release
-          zip -r spartan-${{ needs.create-release.outputs.version }}-macos.zip spartan.app
+          zip -r spartan-macos.zip spartan.app
 
       - name: Upload macOS build
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-zip
+          path: build/macos/Build/Products/Release/spartan-macos.zip
+
+  create-release:
+    name: Create Release
+    needs: [build-android, build-linux, build-windows, build-macos]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Prepare release assets
+        run: |
+          mkdir -p release-assets
+          cp artifacts/android-apk/app-release.apk release-assets/spartan-${{ steps.get_version.outputs.version }}-android.apk
+          cp artifacts/linux-tarball/spartan-linux-x64.tar.gz release-assets/spartan-${{ steps.get_version.outputs.version }}-linux-x64.tar.gz
+          cp artifacts/windows-msix/*.msix release-assets/spartan-${{ steps.get_version.outputs.version }}-windows.msix
+          cp artifacts/macos-zip/spartan-macos.zip release-assets/spartan-${{ steps.get_version.outputs.version }}-macos.zip
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Spartan v${{ steps.get_version.outputs.version }}
+          draft: false
+          prerelease: false
+          files: release-assets/*
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: build/macos/Build/Products/Release/spartan-${{ needs.create-release.outputs.version }}-macos.zip
-          asset_name: spartan-${{ needs.create-release.outputs.version }}-macos.zip
-          asset_content_type: application/zip
