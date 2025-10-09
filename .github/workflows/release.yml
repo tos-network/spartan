@@ -8,7 +8,7 @@ on:
 jobs:
   build-android:
     name: Build Android
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,7 +28,8 @@ jobs:
           channel: stable
 
       - name: Install Flutter Rust bridge
-        run: cargo install flutter_rust_bridge_codegen
+        run: |
+          cargo install 'flutter_rust_bridge_codegen'
 
       - name: Install dependencies
         run: flutter pub get
@@ -70,7 +71,8 @@ jobs:
           channel: stable
 
       - name: Install Flutter Rust bridge
-        run: cargo install flutter_rust_bridge_codegen
+        run: |
+          cargo install 'flutter_rust_bridge_codegen'
 
       - name: Install dependencies
         run: flutter pub get
@@ -111,7 +113,8 @@ jobs:
           channel: stable
 
       - name: Install Flutter Rust bridge
-        run: cargo install flutter_rust_bridge_codegen
+        run: |
+          cargo install 'flutter_rust_bridge_codegen'
 
       - name: Install dependencies
         run: flutter pub get
@@ -150,7 +153,8 @@ jobs:
           channel: stable
 
       - name: Install Flutter Rust bridge
-        run: cargo install flutter_rust_bridge_codegen
+        run: |
+          cargo install 'flutter_rust_bridge_codegen'
 
       - name: Install dependencies
         run: flutter pub get
