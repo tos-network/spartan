@@ -96,3 +96,4 @@ msix_config:
   display_name: Spartan
   publisher_display_name: TOS
   logo_path: assets/icons/png/circle/green_background_black_logo.png
+  install_certificate: false

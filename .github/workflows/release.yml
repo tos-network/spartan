@@ -250,6 +250,8 @@ jobs:
           cp artifacts/android-apk/app-release.apk release-assets/spartan-${{ steps.get_version.outputs.version }}-android.apk
           cp artifacts/linux-tarball/spartan-linux-x64.tar.gz release-assets/spartan-${{ steps.get_version.outputs.version }}-linux-x64.tar.gz
           cp artifacts/windows-msix/*.msix release-assets/spartan-${{ steps.get_version.outputs.version }}-windows.msix
+          cp install-certificate.ps1 release-assets/
+          cp WINDOWS_INSTALL.md release-assets/
           cp artifacts/macos-zip/spartan-macos.zip release-assets/spartan-${{ steps.get_version.outputs.version }}-macos.zip
 
       - name: Create Release
