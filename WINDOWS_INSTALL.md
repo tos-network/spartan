@@ -2,11 +2,11 @@
 
 ## Installing Spartan Wallet on Windows
 
-There are **two methods** to install Spartan Wallet on Windows:
+There is **one method** to install Spartan Wallet on Windows:
 
 ---
 
-## Method 1: Automatic Certificate Installation (Recommended) ⭐
+## Automatic Certificate Installation ⭐
 
 ### Step 1: Download Files
 Download both files from the [latest release](https://github.com/tos-network/spartan/releases/latest):
@@ -17,7 +17,10 @@ Download both files from the [latest release](https://github.com/tos-network/spa
 1. Right-click on **PowerShell** and select **"Run as Administrator"**
 2. Navigate to the folder where you downloaded the files:
    ```powershell
-   cd Downloads
+   cd $env:USERPROFILE\Downloads
+   Get-ChildItem .\install-certificate*.ps1
+   Unblock-File .\install-certificate.ps1
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force .\install-certificate.ps1
    ```
 3. Run the installation script:
    ```powershell
@@ -31,28 +34,11 @@ Double-click the `spartan-x.x.x-windows.msix` file to install Spartan Wallet.
 
 ---
 
-## Method 2: Enable Developer Mode
-
-### Option A: Via Settings
-1. Open **Settings** → **Privacy & Security** → **For developers**
-2. Enable **Developer Mode**
-3. Double-click the MSIX file to install
-
-### Option B: Via PowerShell (Administrator)
-```powershell
-# Enable Developer Mode
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name "AllowDevelopmentWithoutDevLicense" -Value 1
-```
-
-After enabling Developer Mode, you can install the MSIX file directly.
-
----
-
 ## Troubleshooting
 
 ### Error: "This app package's publisher certificate could not be verified" (0x800B010A)
 
-This error means the certificate is not trusted. Use **Method 1** above to install the certificate.
+This error means the certificate is not trusted. Use the **method** above to install the certificate.
 
 ### Error: "This script must be run as Administrator"
 
@@ -64,7 +50,6 @@ Run this command in PowerShell (as Administrator):
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
-
 ---
 
 ## Why is this needed?
