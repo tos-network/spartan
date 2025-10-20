@@ -617,26 +617,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "832133bbabbbaa9fbdba793456a2827627a7d2b8fb96032fa1e7666d7895832b"
 
 [[package]]
-name = "bulletproofs"
-version = "5.0.2"
-source = "git+https://github.com/tos-network/bulletproofs?tag=v5.0.2#70e335fe1a35b812a8cd5346b4545e2a9e9b42b2"
-dependencies = [
- "byteorder",
- "curve25519-dalek",
- "digest",
- "group",
- "merlin",
- "rand 0.8.5",
- "rand_core 0.6.4",
- "serde",
- "serde_derive",
- "sha3",
- "subtle",
- "thiserror 1.0.69",
- "zeroize",
-]
-
-[[package]]
 name = "bumpalo"
 version = "3.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1998,18 +1978,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f52b00d39961fc5b2736ea853c9cc86238e165017a493d1d5c8eac6bdc4cc273"
 
 [[package]]
-name = "merlin"
-version = "3.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "58c38e2799fc0978b65dfff8023ec7843e2330bb462f19198840b34b6582397d"
-dependencies = [
- "byteorder",
- "keccak",
- "rand_core 0.6.4",
- "zeroize",
-]
-
-[[package]]
 name = "metrics"
 version = "0.24.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2818,6 +2786,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "siphasher"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "56199f7ddabf13fe5074ce809e7d3f42b42ae711800501b5b16ea82ad029c39d"
+
+[[package]]
 name = "slab"
 version = "0.4.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3312,7 +3286,7 @@ dependencies = [
 [[package]]
 name = "tos_common"
 version = "0.1.0"
-source = "git+https://github.com/tos-network/tos#61e83067b46067275786cf30928d9e3d1da95c4d"
+source = "git+https://github.com/tos-network/tos#211c37d7ec64eda0e50a23486883c017b2acf533"
 dependencies = [
  "actix-rt",
  "actix-web",
@@ -3322,7 +3296,6 @@ dependencies = [
  "aws-lc-sys 0.30.0",
  "better_any",
  "blake3",
- "bulletproofs",
  "cfg-if",
  "chacha20 0.9.1",
  "chacha20poly1305",
@@ -3337,7 +3310,6 @@ dependencies = [
  "lazy_static",
  "log",
  "log-panics",
- "merlin",
  "metrics",
  "pin-project-lite",
  "primitive-types",
@@ -3349,6 +3321,8 @@ dependencies = [
  "serde_json",
  "serde_regex",
  "sha3",
+ "siphasher",
+ "subtle",
  "thiserror 2.0.17",
  "tokio",
  "tokio-tungstenite-wasm",
@@ -3364,7 +3338,7 @@ dependencies = [
 [[package]]
 name = "tos_wallet"
 version = "0.1.0"
-source = "git+https://github.com/tos-network/tos#61e83067b46067275786cf30928d9e3d1da95c4d"
+source = "git+https://github.com/tos-network/tos#211c37d7ec64eda0e50a23486883c017b2acf533"
 dependencies = [
  "actix-web",
  "actix-web-httpauth",

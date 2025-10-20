@@ -480,7 +480,6 @@ impl TosWallet {
         str_address: String,
         asset_hash: Option<String>,
         extra_data: Option<String>,
-        encrypt_extra_data: Option<bool>,
         fee_multiplier: Option<f64>,
     ) -> Result<String> {
         self.pending_transactions.write().clear();
@@ -509,10 +508,6 @@ impl TosWallet {
             amount,
             asset: asset.clone(),
             extra_data: extra_data.clone(),
-            encrypt_extra_data: match encrypt_extra_data {
-                Some(value) => value,
-                None => false,
-            },
         };
 
         let estimated_fees = self
@@ -538,10 +533,6 @@ impl TosWallet {
             amount,
             asset: asset.clone(),
             extra_data,
-            encrypt_extra_data: match encrypt_extra_data {
-                Some(value) => value,
-                None => false,
-            },
         };
 
         let transaction_type_builder = TransactionTypeBuilder::Transfers(vec![transfer]);
@@ -582,7 +573,6 @@ impl TosWallet {
         str_address: String,
         asset_hash: Option<String>,
         extra_data: Option<String>,
-        encrypt_extra_data: Option<bool>,
         fee_multiplier: Option<f64>,
     ) -> Result<String> {
         info!("Building multisig transfer all transaction...");
@@ -616,10 +606,6 @@ impl TosWallet {
                     amount,
                     asset: asset.clone(),
                     extra_data: extra_data.clone(),
-                    encrypt_extra_data: match encrypt_extra_data {
-                        Some(value) => value,
-                        None => false,
-                    },
                 };
 
                 let estimated_fees = self
@@ -645,10 +631,6 @@ impl TosWallet {
                     amount,
                     asset: asset.clone(),
                     extra_data,
-                    encrypt_extra_data: match encrypt_extra_data {
-                        Some(value) => value,
-                        None => false,
-                    },
                 };
 
                 let transaction_type_builder = TransactionTypeBuilder::Transfers(vec![transfer]);
@@ -1415,10 +1397,6 @@ impl TosWallet {
                 extra_data: match transfer.extra_data {
                     None => None,
                     Some(value) => Some(DataElement::Value(DataValue::String(value))),
-                },
-                encrypt_extra_data: match transfer.encrypt_extra_data {
-                    Some(value) => value,
-                    None => false,
                 },
             };
 
