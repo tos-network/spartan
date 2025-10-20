@@ -20,7 +20,10 @@ Future<DaemonInfoSnapshot?> nodeInfo(Ref ref) async {
     return DaemonInfoSnapshot(
       topoHeight: NumberFormat().format(info.topoHeight),
       pruned: info.prunedTopoHeight != null ? true : false,
-      circulatingSupply: formatTos(info.circulatingSupply ?? 0, walletState.network),
+      circulatingSupply: formatTos(
+        info.circulatingSupply ?? 0,
+        walletState.network,
+      ),
       burnSupply: formatTos(info.burnedSupply ?? 0, walletState.network),
       averageBlockTime: Duration(milliseconds: info.averageBlockTime ?? 0),
       mempoolSize: info.mempoolSize,
