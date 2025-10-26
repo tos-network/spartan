@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:spartan/features/logger/logger.dart';
 import 'package:spartan/features/settings/application/app_localizations_provider.dart';
 import 'package:spartan/features/settings/application/settings_state_provider.dart';
 import 'package:spartan/features/wallet/application/transaction_review_provider.dart';
@@ -332,31 +333,47 @@ class _TransferScreenState extends ConsumerState<TransferScreen> {
             );
       }
 
-      if (record.$2 != null) {
-        // multisig is enabled, hash to sign is returned
-        ref
-            .read(transactionReviewProvider.notifier)
-            .signaturePending(record.$2!);
-      } else if (record.$1 != null) {
-        // no multisig, transaction summary is returned
-        ref
-            .read(transactionReviewProvider.notifier)
-            .setSingleTransferTransaction(record.$1!);
-      } else {
-        if (mounted && context.loaderOverlay.visible) {
-          context.loaderOverlay.hide();
+      try {
+        if (record.$2 != null) {
+          // multisig is enabled, hash to sign is returned
+          ref
+              .read(transactionReviewProvider.notifier)
+              .signaturePending(record.$2!);
+        } else if (record.$1 != null) {
+          // no multisig, transaction summary is returned
+          ref
+              .read(transactionReviewProvider.notifier)
+              .setSingleTransferTransaction(record.$1!);
+        } else {
+          if (mounted && context.loaderOverlay.visible) {
+            context.loaderOverlay.hide();
+          }
+          return;
         }
-        return;
-      }
 
-      if (mounted) {
-        showDialog<void>(
-          context: context,
-          barrierDismissible: false,
-          builder: (context) {
-            return TransactionDialog();
-          },
-        );
+        if (mounted) {
+          showDialog<void>(
+            context: context,
+            barrierDismissible: false,
+            builder: (context) {
+              return TransactionDialog();
+            },
+          );
+        }
+      } catch (e, stackTrace) {
+        final loc = ref.read(appLocalizationsProvider);
+        talker.error('Error in _reviewTransfer: $e\n$stackTrace');
+
+        // Show detailed error message in release version
+        String errorMessage = '${loc.oups}\n\n';
+        if (e.toString().contains('Null') && e.toString().contains('bool')) {
+          errorMessage +=
+              'Boolean type error detected.\nPlease contact support with this information:\n$e';
+        } else {
+          errorMessage += 'Error: $e';
+        }
+
+        ref.read(snackBarQueueProvider.notifier).showError(errorMessage);
       }
 
       if (mounted && context.loaderOverlay.visible) {

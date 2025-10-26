@@ -230,9 +230,12 @@ class _FilterDialogState extends ConsumerState<FilterDialog> {
       final selectedCategories =
           _formKey.currentState!.fields['category']!.value as List<String>;
       final hideExtraData =
-          _formKey.currentState!.fields['hide_extra_data']!.value as bool;
+          (_formKey.currentState!.fields['hide_extra_data']!.value as bool?) ??
+          false;
       final hideZeroBalance =
-          _formKey.currentState!.fields['hide_zero_balance']!.value as bool;
+          (_formKey.currentState!.fields['hide_zero_balance']!.value
+              as bool?) ??
+          false;
       final selectedAsset =
           _formKey.currentState!.fields['asset']!.value as String?;
       final selectedContact =

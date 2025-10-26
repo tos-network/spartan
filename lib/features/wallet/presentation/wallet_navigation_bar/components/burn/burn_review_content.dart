@@ -105,6 +105,7 @@ class BurnReviewContent extends ConsumerWidget {
                 ? SizedBox.shrink()
                 : FormBuilderCheckbox(
                     name: 'confirm',
+                    initialValue: transaction.isConfirmed,
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.only(top: Spaces.small),
                       isDense: true,
@@ -120,7 +121,7 @@ class BurnReviewContent extends ConsumerWidget {
                     onChanged: (value) {
                       ref
                           .read(transactionReviewProvider.notifier)
-                          .setConfirmation(value as bool);
+                          .setConfirmation(value ?? false);
                     },
                   ),
           ),

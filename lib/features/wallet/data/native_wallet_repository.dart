@@ -331,6 +331,44 @@ class NativeWalletRepository {
       );
     }
     final jsonTx = jsonDecode(rawTx) as Map<String, dynamic>;
+
+    // Workaround for SDK issue: ensure encrypt_extra_data is not null
+    if (jsonTx['transaction_type'] != null &&
+        jsonTx['transaction_type'] is Map<String, dynamic>) {
+      final txType = jsonTx['transaction_type'] as Map<String, dynamic>;
+
+      // Handle both 'Transfers' (capitalized) and 'transfers' (lowercase)
+      final transfersKey = txType.containsKey('Transfers')
+          ? 'Transfers'
+          : txType.containsKey('transfers')
+          ? 'transfers'
+          : null;
+
+      if (transfersKey != null) {
+        final transfersData = txType[transfersKey];
+
+        if (transfersData is Map<String, dynamic> &&
+            transfersData['transfers'] is List) {
+          final transfersList = transfersData['transfers'] as List;
+          for (var i = 0; i < transfersList.length; i++) {
+            if (transfersList[i] is Map<String, dynamic>) {
+              final transfer = transfersList[i] as Map<String, dynamic>;
+              transfer['encrypt_extra_data'] ??= false;
+            }
+          }
+        } else if (transfersData is List) {
+          // Handle case where transfers is directly a List
+          final transfersList = transfersData as List;
+          for (var i = 0; i < transfersList.length; i++) {
+            if (transfersList[i] is Map<String, dynamic>) {
+              final transfer = transfersList[i] as Map<String, dynamic>;
+              transfer['encrypt_extra_data'] ??= false;
+            }
+          }
+        }
+      }
+    }
+
     return TransactionSummary.fromJson(jsonTx);
   }
 
