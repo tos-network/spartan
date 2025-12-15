@@ -44,16 +44,42 @@ This release migrates from GHOSTDAG terminology back to BlockDAG terminology:
 
 ### Impact on Spartan
 
-**✅ No code changes required**
+**Dart SDK**: No code changes required - Spartan does not directly use the renamed fields (`blueScore`) or methods (`getBlueScore`, etc.).
 
-Spartan does not directly use the renamed fields (`blueScore`) or methods (`getBlueScore`, etc.). The SDK update is a dependency-only change.
+**Rust Wallet API**: The `tos_wallet` crate was updated with breaking changes that required fixes:
+
+#### File: `rust/src/api/wallet.rs`
+
+1. **`Wallet::create`** - Added new `light_mode: bool` parameter (8th argument)
+2. **`Wallet::open`** - Added new `light_mode: bool` parameter (7th argument)
+
+```rust
+// Before
+Wallet::create(&name, &password, recover, network, precomputed_tables, n_threads, n_threads)
+
+// After
+Wallet::create(&name, &password, recover, network, precomputed_tables, n_threads, n_threads, false)
+```
+
+#### File: `rust/src/api/xswd.rs`
+
+3. **`enable_xswd`** - Added new `bind_address: Option<String>` parameter
+
+```rust
+// Before
+self.get_wallet().enable_xswd().await
+
+// After
+self.get_wallet().enable_xswd(None).await
+```
 
 ### Verification
 
 ```bash
+cargo check
 flutter analyze lib --no-fatal-infos
 ```
-**Result**: ✅ No new errors (14 pre-existing warnings/infos unrelated to this update)
+**Result**: ✅ Build successful, no errors
 
 ---
 

@@ -74,7 +74,7 @@ impl XSWD for TosWallet {
             + Sync
             + 'static,
     ) -> Result<()> {
-        match self.get_wallet().enable_xswd().await {
+        match self.get_wallet().enable_xswd(None).await {
             Ok(Some(receiver)) => {
                 spawn_task("xswd_handler", async move {
                     xswd_handler(

@@ -85,6 +85,7 @@ pub async fn create_tos_wallet(
         precomputed_tables,
         n_threads,
         n_threads,
+        false, // light_mode
     )
     .await?;
 
@@ -124,6 +125,7 @@ pub async fn open_tos_wallet(
         precomputed_tables,
         n_threads,
         n_threads,
+        false, // light_mode
     )?;
 
     Ok(TosWallet {
