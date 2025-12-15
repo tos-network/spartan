@@ -1,16 +1,75 @@
-# TOS Dart SDK Update to v0.29.3
+# TOS Dart SDK API Updates
 
-## Summary
+This document tracks tos-dart-sdk version updates and any required changes in Spartan.
+
+---
+
+## v0.29.4 - BlockDAG Terminology Migration
+
+### Summary
+
+Updated tos-dart-sdk from v0.29.3 to v0.29.4. No code changes required in Spartan.
+
+### Dependency Update
+- **File**: `pubspec.yaml`
+- **Change**: `tos_dart_sdk: ^0.29.3` → `tos_dart_sdk: ^0.29.4`
+
+### Breaking Changes in tos-dart-sdk v0.29.4
+
+This release migrates from GHOSTDAG terminology back to BlockDAG terminology:
+
+#### RPC Method Renames
+| Old Method | New Method |
+|------------|------------|
+| `getBlueScore()` | `getHeight()` |
+| `getStableBlueScore()` | `getStableHeight()` |
+| `getBlocksAtBlueScore()` | `getBlocksAtHeight()` |
+
+#### DTO Field Renames
+| DTO Class | Old Field | New Field |
+|-----------|-----------|-----------|
+| `Block` | `blueScore` | `height` |
+| `GetInfoResult` | `blueScore` | `height` |
+| `GetInfoResult` | `stableBlueScore` | `stableHeight` |
+| `PeerEntry` | `blueScore` | `height` |
+| `GetHardForksResult` | `blueScore` | `height` |
+| `GetMinerWorkResult` | `blueScore` | `height` |
+| `GetBlockTemplateResult` | `blueScore` | `height` |
+| `DevFeeThresholds` | `blueScore` | `height` |
+
+#### Class Renames
+| Old Class | New Class |
+|-----------|-----------|
+| `GetBlocksAtBlueScoreParams` | `GetBlocksAtHeightParams` |
+
+### Impact on Spartan
+
+**✅ No code changes required**
+
+Spartan does not directly use the renamed fields (`blueScore`) or methods (`getBlueScore`, etc.). The SDK update is a dependency-only change.
+
+### Verification
+
+```bash
+flutter analyze lib --no-fatal-infos
+```
+**Result**: ✅ No new errors (14 pre-existing warnings/infos unrelated to this update)
+
+---
+
+## v0.29.3 - API Simplification
+
+### Summary
 
 Updated tos-dart-sdk from v0.29.2 to v0.29.3 and adapted code to handle API changes.
 
-## Changes Made
+### Changes Made
 
-### 1. Dependency Update
+#### 1. Dependency Update
 - **File**: `pubspec.yaml`
-- **Change**: tos-dart-sdk automatically updated to 0.29.3 (using local path dependency)
+- **Change**: tos-dart-sdk updated to 0.29.3
 
-### 2. API Compatibility Fixes
+#### 2. API Compatibility Fixes
 
 #### File: `lib/features/wallet/application/node_info_provider.dart`
 
@@ -68,6 +127,7 @@ Fields made optional:
 
 ### API Method Renames
 - `get_blocks_at_height` → `get_blocks_at_blue_score` (not used in Spartan)
+- Note: This was reversed back to `get_blocks_at_height` in v0.29.4
 
 ## Verification
 

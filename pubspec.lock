@@ -1342,10 +1342,10 @@ packages:
     dependency: "direct main"
     description:
       name: tos_dart_sdk
-      sha256: a1f73047a037ff1e77143cff8794289edf05f84a1e858552c353c3be6a75e15a
+      sha256: "04c1d0f087fb8ecb5875d2a3554652a5a02b70a2fb12f6bce394d1064bd8f51f"
       url: "https://pub.dev"
     source: hosted
-    version: "0.29.3"
+    version: "0.29.4"
   transparent_image:
     dependency: "direct main"
     description:
